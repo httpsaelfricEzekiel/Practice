@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@300&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container {
+    position: relative;
+    height: 100vh;
+}
+.header-container {
+    display: block;
+    width: 100%;
+    height: 70px;
+    background: black;
+}
+.logo {
+    position: absolute;
+    top: 15px;
+    left: 30px;
+}
+.logo-text .logo-link {
+    font: 30px Arial bold;
+    color: white;
+    text-decoration: none;
+}
+.navbar {
+    position: absolute;
+    left: 700px;
+    top: 20px;
+}
+.nav-links .nav-lists {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.list-links .links {
+    text-decoration: none;
+    font: 20px Poppins bold;
+    padding: 20px;
+    color: white;
+}
