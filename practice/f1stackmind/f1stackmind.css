@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url('f1 stackmind/bg2.png');
+    background-size: cover;
+}
+header{
+    margin: 0;
+    width: 100%;
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+.navbar{
+    display: flex;
+    position: relative;
+    text-align: center;
+    position: center;
+    text-shadow: white;
+}
+.navbutton{
+    color: white;
+    background-color: transparent;
+    border: 0;
+    font-size: 20 ;
+    margin: 20;
+}
+/*main body*/
+main{
+    position: relative;
+}
+.Webname {
+    color: white;
+    position: absolute;
+    top: 200px;
+    left: 500px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50;
+}
+.gotobutton{
+    position: absolute;
+    top: 455px;
+    left: 454px;
+    font-size: 18px;
+}
+.logo{
+    width: 100px;
+    height: 100px;
+}
