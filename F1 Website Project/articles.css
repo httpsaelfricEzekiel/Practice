@@ -66,14 +66,15 @@ body {
 }
 .content-box .row1 {
     padding: 30px;
+    display: block;
 }
 .col1 {
     padding: 10px;
     position: absolute;
-    left: 50px;
+    left: 20px;
     background-color: white;
     border: none;
-    box-shadow: 0 0 20px blue;
+    box-shadow: 0 0 10px #ffe4e1;
     -ms-transform: rotate(5deg);
     -webkit-transform: rotate(5deg);
     transform: rotate(5deg);
@@ -86,4 +87,58 @@ body {
 }
 .col1 #F1st {
     width: 300px;
+}
+.col1 span {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.col2 {
+    padding: 10px;
+    position: absolute;
+    left: 380px;
+    background-color: white;
+    border: none;
+    box-shadow: 0 0 10px #ffe4e1;
+    -ms-transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+    transform: rotate(10deg);
+    float: left;
+    width: 300px;
+    height: 350px;
+}
+.col2:hover {
+    transform: rotate(0deg);
+}
+.col2 #F2nd{
+    width: 300px;
+}
+.col2 span {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.col3 {
+    padding: 10px;
+    position: absolute;
+    left: 750px;
+    background-color: white;
+    border: none;
+    box-shadow: 0 0 10px #ffe4e1;
+    -ms-transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+    transform: rotate(10deg);
+    float: left;
+    width: 300px;
+    height: 350px;
+}
+.col3:hover {
+    transform: rotate(0deg);
+}
+.col3 #F3rd {
+    width: 300px;
+}
+.col3 span {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.row1::after{
+    content: "";
+    display: table;
+    clear: both;
 }
