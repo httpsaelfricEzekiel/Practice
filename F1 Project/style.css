@@ -3,7 +3,7 @@
     padding: 0;
 }
 body {
-    background-image: url("img/background4.jpg");
+    background-image: url("img/F1Stackmind.gif");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -15,7 +15,6 @@ body {
     top: 0;
     display: block;
     height: 6em;
-    background-color: black;
 }
 .header-container .header-bx {
     padding: 10px;
@@ -52,15 +51,23 @@ body {
 .navbar-container .nav-links:hover {
     color: pink;
 }
-.header-bx .login-container {
-    display: flex;
+.games-container {
+    display: inline-block;
     position: absolute;
-    right: 100px;
-    top: 30px;
+    left: 200px;
+    top: 450px;
 }
-.login-container .button-lgn {
-    padding: 10px 30px;
-    background: white;
+.games-container .games-btn {
+    border: none;
+    background-color: white;
     text-align: center;
+    padding: 10px 30px;
     border-radius: 10px;
+    cursor: pointer;
+    transform: 0.2s;
+}
+.games-btn:hover {
+    background: black;
+    color: white;
+    border: none;
 }
