@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container .header-wrapper{
+    background-image: url("img/bg3.jpg");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.navbar-box {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 13vh;
+}
+.navbar-box .about {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+    align-items: center;
+}
+.text-box {
+    display: inline-block;
+    position: relative;
+    left: 2em;
+}
+.text-box h1 {
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    font-style: italic;
+    font-size: 30px;
+}
+.about .navbar-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    left: 500px;
+    gap: 30px;
+}
+.navbar-wrapper a {
+    color: white;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+}
+/* About Link */
+.navbar-wrapper #aboutme::before {
+    content: "";
+    position: absolute;
+    top: 23px;
+    left: 0;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: center;
+    background-color: greenyellow;
+    transition: transform .20s;
+}
+.navbar-wrapper #aboutme:hover::before{
+    transform: scaleX(1);
+    width: 85px;
+}
+/* Address Link */
+.navbar-wrapper #address::before {
+    content: "";
+    position: absolute;
+    top: 23px;
+    left: 6.5em;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: center;
+    background-color: greenyellow;
+    transition: transform .20s;
+}
+.navbar-wrapper #address:hover::before{
+    transform: scaleX(1);
+    width: 85px;
+}
+/* Contact Number Link */
+.navbar-wrapper #aboutme::before {
+    content: "";
+    position: absolute;
+    top: 23px;
+    left: 0;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: center;
+    background-color: greenyellow;
+    transition: transform .20s;
+}
+.navbar-wrapper #aboutme:hover::before{
+    transform: scaleX(1);
+    width: 85px;
+}
+/* Facebook Link */
+.navbar-wrapper #aboutme::before {
+    content: "";
+    position: absolute;
+    top: 23px;
+    left: 0;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: center;
+    background-color: greenyellow;
+    transition: transform .20s;
+}
+.navbar-wrapper #aboutme:hover::before{
+    transform: scaleX(1);
+    width: 85px;
+}
+/* Philosophy Page */
+.navbar-wrapper #aboutme::before {
+    content: "";
+    position: absolute;
+    top: 23px;
+    left: 0;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: center;
+    background-color: greenyellow;
+    transition: transform .20s;
+}
+.navbar-wrapper #aboutme:hover::before{
+    transform: scaleX(1);
+    width: 85px;
+}
