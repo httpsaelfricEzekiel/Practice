@@ -48,6 +48,10 @@
     text-decoration: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 18px;
+    cursor: pointer;
+}
+.navbar-wrapper a:hover {
+    color: yellowgreen;
 }
 /* About Link */
 .navbar-wrapper #aboutme::before {
@@ -59,7 +63,7 @@
     transform: scaleX(0);
     transform-origin: center;
     background-color: greenyellow;
-    transition: transform .20s;
+    transition: transform .3s;
 }
 .navbar-wrapper #aboutme:hover::before{
     transform: scaleX(1);
@@ -70,62 +74,62 @@
     content: "";
     position: absolute;
     top: 23px;
-    left: 6.5em;
+    left: 6.3em;
     height: 2px;
     transform: scaleX(0);
     transform-origin: center;
     background-color: greenyellow;
-    transition: transform .20s;
+    transition: transform .3s;
 }
 .navbar-wrapper #address:hover::before{
     transform: scaleX(1);
-    width: 85px;
+    width: 74px;
 }
 /* Contact Number Link */
-.navbar-wrapper #aboutme::before {
+.navbar-wrapper #conNum::before {
     content: "";
     position: absolute;
     top: 23px;
-    left: 0;
+    left: 12.2em;
     height: 2px;
     transform: scaleX(0);
     transform-origin: center;
     background-color: greenyellow;
-    transition: transform .20s;
+    transition: transform .3s;
 }
-.navbar-wrapper #aboutme:hover::before{
+.navbar-wrapper #conNum:hover::before{
     transform: scaleX(1);
-    width: 85px;
+    width: 145px;
 }
 /* Facebook Link */
-.navbar-wrapper #aboutme::before {
+.navbar-wrapper #fb::before {
     content: "";
     position: absolute;
     top: 23px;
-    left: 0;
+    left: 22em;
     height: 2px;
     transform: scaleX(0);
     transform-origin: center;
     background-color: greenyellow;
-    transition: transform .20s;
+    transition: transform .3s;
 }
-.navbar-wrapper #aboutme:hover::before{
+.navbar-wrapper #fb:hover::before{
     transform: scaleX(1);
     width: 85px;
 }
 /* Philosophy Page */
-.navbar-wrapper #aboutme::before {
+.navbar-wrapper #phil::before {
     content: "";
     position: absolute;
     top: 23px;
-    left: 0;
+    left: 28.3em;
     height: 2px;
     transform: scaleX(0);
     transform-origin: center;
     background-color: greenyellow;
-    transition: transform .20s;
+    transition: transform .3s;
 }
-.navbar-wrapper #aboutme:hover::before{
+.navbar-wrapper #phil:hover::before{
     transform: scaleX(1);
-    width: 85px;
+    width: 150px;
 }
