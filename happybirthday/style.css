@@ -43,4 +43,15 @@ body {
     font-weight: bold;
     text-align: center;
     margin: 30px;
+    background-image: linear-gradient(120deg, #DFEBF6 0%, #768A96 100%);
+    transition: 0.1s;
+}
+.ballons-1, .ballons-2, .ballons-3, .ballons-4, .ballons-5{
+    position: absolute;
+    width: 85px;
+    height: 95px;
+    border-radius: 50%;
+}
+.ballons-1 {
+    background-color: blue;
 }
