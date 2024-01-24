@@ -1,0 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.logo-phil {
+    object-fit: cover;
+    width: 150px;
+    mix-blend-mode:darken;
+}
