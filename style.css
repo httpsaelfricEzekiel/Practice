@@ -1,10 +1,13 @@
 *{
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 .logo-phil {
     object-fit: cover;
     width: 80px;
     mix-blend-mode:multiply;
-    background-color: transparent;
+}
+.nav-link {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
