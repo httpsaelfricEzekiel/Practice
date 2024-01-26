@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
@@ -6,15 +6,77 @@
 .logo-phil {
     object-fit: cover;
     width: 80px;
-    mix-blend-mode:multiply;
+    mix-blend-mode: multiply;
 }
 .nav-link {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+.overlay-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.overlay-container:hover {
+    opacity: 1;
+}
+.text {
+    margin: 0 100px;
+    color: white;
+    font-size: 54px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+.p-coron {
+    margin: 0 100px;
+    line-height: 1.7;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.p-mayon {
+    margin: 0 100px;
+    line-height: 1.5;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.p-lingguhob {
+    margin: 0 100px;
+    line-height: 1.5;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.p-boracay {
+    margin: 0 100px;
+    line-height: 1.5;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.p-banaue {
+    margin: 0 100px;
+    line-height: 1.5;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.p-batanes {
+    margin: 0 100px;
+    line-height: 1.5;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.overlay-container:hover .text .text-light{
+    opacity: 1;
+}
 .bg {
-    background-image: url("img/bg1.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("img/bg1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: 120vh;
+}
+.card {
+    margin-top: 10%;
+    margin-right: 50px;
+    margin-left: 50px;
 }
