@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile </title>
+    <style>
+        input {
+            padding: 10px 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="form-container">
@@ -16,7 +21,7 @@
             <br>
             <input type="text" name="address" id="address" placeholder="Enter address" required>
             <br>
-            <input type="text" name="fb_Link" id="fbLink" placeholder="Enter facebook link" required>
+            <input type="text" name="fb_link" id="fbLink" placeholder="Enter facebook link" required>
             <br>
             <input type="number" name="age" id="age" placeholder="Enter age" required>
             <br>
