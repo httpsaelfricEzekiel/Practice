@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="form-container">
-        <form action="verification.php" method="post">
+        <form action="verification.php" method="POST">
             <input type="text" name="fname" id="fname" placeholder="Enter first name" required>
             <br>
             <input type="text" name="lname" id="lname" placeholder="Enter last nane" required>
@@ -16,7 +16,7 @@
             <br>
             <input type="text" name="address" id="address" placeholder="Enter address" required>
             <br>
-            <input type="text" name="fb_link" id="fbLink" placeholder="Enter facebook link" required>
+            <input type="text" name="fb_Link" id="fbLink" placeholder="Enter facebook link" required>
             <br>
             <input type="number" name="age" id="age" placeholder="Enter age" required>
             <br>
