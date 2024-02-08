@@ -7,35 +7,37 @@
     <style>
         input {
             padding: 10px 10px;
+            box-sizing: border-box;
         }
     </style>
 </head>
 <body>
     <div class="form-container">
-        <form action="verification.php" method="POST">
-            <input type="text" name="fname" id="fname" placeholder="Enter first name" required>
+        <h1>User Profile Verificatio Form</h1>
+        <form action="login.php" method="post">
+            <input type="text" name="fname" placeholder="Enter first name" required>
             <br>
-            <input type="text" name="lname" id="lname" placeholder="Enter last nane" required>
+            <input type="text" name="lname" placeholder="Enter last nane" required>
             <br>
-            <input type="email" name="email" id="email" placeholder="Enter email" required>
+            <input type="email" name="email" placeholder="Enter email" required>
             <br>
-            <input type="text" name="address" id="address" placeholder="Enter address" required>
+            <input type="text" name="address"  placeholder="Enter address" required>
             <br>
-            <input type="text" name="fb_link" id="fbLink" placeholder="Enter facebook link" required>
+            <input type="text" name="fb_link"  placeholder="Enter facebook link" required>
             <br>
-            <input type="number" name="age" id="age" placeholder="Enter age" required>
+            <input type="number" name="age" placeholder="Enter age" required>
             <br>
-            <input type="text" name="insta_link" id="instaLink" placeholder="Enter instagram link" required>
+            <input type="text" name="insta_link" placeholder="Enter instagram link" required>
             <br>
-            <input type="password" name="pass" id="password" placeholder="Enter password" required> 
+            <input type="password" name="pass" placeholder="Enter password" required> 
             <br>
-            <input type="text" name="gender" id="gender" placeholder="Enter sex" required>
+            <input type="text" name="gender" placeholder="Enter sex" required>
             <br>
-            <input type="text" name="school" id="school" placeholder="Enter college or univeristy" required>
+            <input type="text" name="school"  placeholder="Enter college or univeristy" required>
             <br>
             <br>
             <input type="reset" value="Reset">
-            <input type="submit" value="Login"  id="login" name="verification_profile">
+            <input type="submit" value="Login" name="verification_profile">
         </form>
     </div>
 </body>
