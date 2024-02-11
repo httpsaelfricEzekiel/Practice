@@ -36,13 +36,18 @@
                 }
             }
 
+            $uppercase = preg_match('@[A-Z]@', $password);
+            $lowercase = preg_match('@[a-z]@', $password);
+            $number    = preg_match('@[0-9]@', $password);
+            $specialChars = preg_match('@[^\w]@', $password);
+
             if(empty($_POST['pass'])){
                 $passErr = "password in characters";
             } else {
                 $password = test_input($_POST['pass']);
-                if(!preg_match("/^[a-zA-Z-' ]*$/", $password)){
+                if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8){
                     $passErr = "Password length must be 8 or 16 characters";
-                }
+                }   
             }
             function test_input($data) {
                 $data = trim($data);
@@ -54,5 +59,4 @@
 
         $insert = mysqli_query($conn, "INSERT INTO profile VALUES('0', $username, $password)");
     }
-
-?> 
+?>
