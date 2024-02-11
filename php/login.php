@@ -1,4 +1,4 @@
-<?php 
+<?php   
     include "conn.php";
 
     if(isset($_POST['login'])){
@@ -7,7 +7,6 @@
 
         $insert = mysqli_query($conn, "INSERT INTO users VALUES('0', $username, $password)");
 
-        $nameErr = $username = "";
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             if(empty($_POST['name'])){
                 $alert = "Name in characters";
@@ -20,5 +19,10 @@
         }
     }
 
-
-?>
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+?> 
