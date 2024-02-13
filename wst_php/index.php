@@ -9,11 +9,16 @@
             padding: 10px 10px;
             box-sizing: border-box;
         }
+        body {
+            background-image: url("mybgx.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
     </style>
 </head>
 <body>
     <div class="form-container">
-        <h1>User Profile Verificatio Form</h1>
+        <h1>Profile Form</h1>
         <form action="login.php" method="post">
             <input type="text" name="fname" placeholder="Enter first name" required>
             <br>
