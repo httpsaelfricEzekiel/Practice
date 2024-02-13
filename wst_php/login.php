@@ -15,9 +15,19 @@
 
         $insert = mysqli_query($conn, "INSERT INTO user_profile VALUES ('0', '$firstName', '$lastname', '$email', '$address', '$fbLink', '$age', '$instaLink', '$password', '$gender', '$school')");
         if ($insert == true){
-            echo "<script>alert('Data inserted')</script>";
+            ?>
+            <script>
+                alert("Data inserted");
+                window.location.href="index.php";
+            </script>
+            <?php
         } else {    
-            echo "<script>alert('No Data inserted')</script>";
+            ?>
+            <script>
+                alert("No Data inserted");
+                window.location.href="index.php";
+            </script>
+            <?php
         }
     }   
 
