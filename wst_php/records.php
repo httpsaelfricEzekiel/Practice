@@ -10,6 +10,48 @@
     <title>Records</title>
 </head>
 <body>
-    
+    <div class="table-box">
+        <center>
+            <a href="index.php">Add Profile</a>
+            <a href="records.php">View Records</a>
+
+            <table border="2px solid">
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>FB Link</th>
+                    <th>Age</th>
+                    <th>Instagram Link</th>
+                    <th>Password</th>
+                    <th>Gender</th>
+                    <th>College/Universities</th>
+                </tr>
+
+                <?php
+                    $records = mysqli_query($conn, "SELECT * FROM user_profile");
+                    while($get_records = mysqli_fetch_array($records)){
+                        ?>  
+                            <tr>
+                                <td><?php echo $get_records['id']?></td>
+                                <td><?php echo $get_records['firstName']?></td>
+                                <td><?php echo $get_records['lastName']?></td>
+                                <td><?php echo $get_records['email']?></td>
+                                <td><?php echo $get_records['address']?></td>
+                                <td><?php echo $get_records['fbLink']?></td>
+                                <td><?php echo $get_records['age']?></td>
+                                <td><?php echo $get_records['instaLink']?></td>
+                                <td><?php echo $get_records['password']?></td>
+                                <td><?php echo $get_records['gender']?></td>
+                                <td><?php echo $get_records['school']?></td>
+                            </tr>
+                        <?php
+                    }
+                ?>
+            </table>
+        </center>
+    </div>
 </body>
 </html>
