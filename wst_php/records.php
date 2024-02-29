@@ -14,7 +14,7 @@
         <center>
             <a href="index.php">Add Profile</a>
             <a href="records.php">View Records</a>
-
+            <h1>List of Data</h1>
             <table border="2px solid">
                 <tr>
                     <th>ID</th>
@@ -48,8 +48,8 @@
                                 <td><?php echo $get_records['password']?></td>
                                 <td><?php echo $get_records['gender']?></td>
                                 <td><?php echo $get_records['school']?></td>
-                                <td><a href="update.php?delete_id=<?php echo $get_records['id'];?>">UPDATE</a></td>
-                                <td><a href="delete.php?update_id=<?php echo $get_records['id'];?>">DELETE</a></td>
+                                <td><a href="update.php?update_id=<?php echo $get_records['id'];?>">UPDATE</a></td>
+                                <td><a href="delete.php?delete_id=<?php echo $get_records['id'];?>">DELETE</a></td>
                             </tr>
                         <?php
                     }
