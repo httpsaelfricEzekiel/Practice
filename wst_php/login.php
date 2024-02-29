@@ -13,21 +13,25 @@
         $gender = $_POST['gender'];
         $school = $_POST['school'];
 
-        $insert = mysqli_query($conn, "INSERT INTO user_profile VALUES ('0', '$firstName', '$lastname', '$email', '$address', '$fbLink', '$age', '$instaLink', '$password', '$gender', '$school')");
-        if ($insert == true){
-            ?>
-            <script>
-                alert("Data inserted");
-                window.location.href="index.php";
-            </script>
-            <?php
-        } else {    
-            ?>
-            <script>
-                alert("No Data inserted");
-                window.location.href="index.php";
-            </script>
-            <?php
+        $val = mysqli_query($conn, "SELECT * FROM user_profile WHERE firstName = '$firstName'");
+        $number_data = mysqli_num_rows($val);
+        if($number_data <= 0){
+            $insert = mysqli_query($conn, "INSERT INTO user_profile VALUES ('0', '$firstName', '$lastname', '$email', '$address', '$fbLink', '$age', '$instaLink', '$password', '$gender', '$school')");
+            if ($insert == true){
+                ?>
+                <script>
+                    alert("Data inserted");
+                    window.location.href="index.php";
+                </script>
+                <?php
+            } else {    
+                ?>
+                <script>
+                    alert("No Data inserted");
+                    window.location.href="index.php";
+                </script>
+                <?php
+            }
         }
     }   
 
