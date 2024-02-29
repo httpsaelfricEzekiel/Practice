@@ -28,6 +28,8 @@
                     <th>Password</th>
                     <th>Gender</th>
                     <th>College/Universities</th>
+                    <th>ACTION 1</th>
+                    <th>ACTION 2</th>
                 </tr>
 
                 <?php
@@ -46,6 +48,8 @@
                                 <td><?php echo $get_records['password']?></td>
                                 <td><?php echo $get_records['gender']?></td>
                                 <td><?php echo $get_records['school']?></td>
+                                <td><a href="update.php?delete_id=<?php echo $get_records['id'];?>">UPDATE</a></td>
+                                <td><a href="delete.php?update_id=<?php echo $get_records['id'];?>">DELETE</a></td>
                             </tr>
                         <?php
                     }
