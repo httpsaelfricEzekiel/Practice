@@ -32,6 +32,13 @@
                 </script>
                 <?php
             }
+        } else {
+            ?>
+                <script>
+                    alert("First Name already exists");
+                    window.location.href="index.php";
+                </script>
+            <?php
         }
     }   
 
