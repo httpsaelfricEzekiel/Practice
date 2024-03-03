@@ -1,9 +1,9 @@
-<?php 
+<?php
     include "conn.php";
 
     if(isset($_POST['verification_profile'])){
         $firstName = $_POST['fname'];
-        $lastname = $_POST['lname'];
+        $lastName = $_POST['lname'];
         $email = $_POST['email'];
         $address = $_POST['address'];
         $fbLink = $_POST['fb_link'];
@@ -12,34 +12,36 @@
         $password = $_POST['pass'];
         $gender = $_POST['gender'];
         $school = $_POST['school'];
+        
+        $validate = mysqli_query($conn, "SELECT * FROM user_profile WHERE firstName = '$firstName' AND lastName = '$lastName'");
+        $number = mysqli_num_rows($validate);
 
-        $val = mysqli_query($conn, "SELECT * FROM user_profile WHERE firstName = '$firstName'");
-        $number_data = mysqli_num_rows($val);
-        if($number_data <= 0){
-            $insert = mysqli_query($conn, "INSERT INTO user_profile VALUES ('0', '$firstName', '$lastname', '$email', '$address', '$fbLink', '$age', '$instaLink', '$password', '$gender', '$school')");
-            if ($insert == true){
+        if($number <= 0){
+            $insert = mysqli_query($conn, "INSERT INTO user_profile VALUES('0', '$firstName', '$lastName', '$email', '$address', '$fbLink', '$age', '$instaLink', '$password', '$gender', '$school')");
+
+            if($insert == true){
                 ?>
-                <script>
-                    alert("Data inserted");
-                    window.location.href="index.php";
-                </script>
+                    <script>
+                        alert("Data inserted");
+                        window.location.href="index.php";
+                    </script>
                 <?php
-            } else {    
+            } else {
                 ?>
-                <script>
-                    alert("No Data inserted");
-                    window.location.href="index.php";
-                </script>
+                    <script>
+                        alert("No data inserted");
+                        window.location.href="index.php";
+                    </script>
                 <?php
             }
         } else {
             ?>
                 <script>
-                    alert("First Name already exists");
+                    alert("First Name is already existed");
                     window.location.href="index.php";
                 </script>
-            <?php
-        }
-    }   
+            <?php 
 
+        }
+    }
 ?>

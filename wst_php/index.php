@@ -40,9 +40,9 @@
                 <input type="password" name="pass" placeholder="Enter password" required> 
                 <br>
                 <label>Male</label>
-                <input type="radio" name="gender" required>
+                <input type="radio" name="gender" value="Male">
                 <label>Female</label>
-                <input type="radio" name="gender" required>
+                <input type="radio" name="gender" value="Female">
                 <br>
                 <input type="text" name="school"  placeholder="Enter college or univeristy" required>
                 <br>
