@@ -61,15 +61,15 @@
                 <input type="password" name="pass" placeholder="Enter password" value=<?php echo $password?>  required> 
                 <br>
                 <label>Male</label>
-                <input type="radio" name="gender" value="Male">
+                <input type="radio" name="gender" value="Male" value=<?php echo $gender?> >
                 <label>Female</label>
-                <input type="radio" name="gender" value="Female">
+                <input type="radio" name="gender" value="Female" value=<?php echo $gender?>>
                 <br>
                 <input type="text" name="school"  placeholder="Enter college or univeristy"value=<?php echo $school?> required>
                 <br>
                 <br>
                 <input type="reset" value="Reset">
-                <input type="submit" value="Login" name="update_profile">
+                <input type="submit" value="Update" name="update_profile">
             </form>
         </center>
     </div>

@@ -44,4 +44,37 @@
 
         }
     }
+
+    if(isset($_POST['update_profile'])){
+        $id = $_GET['update_id'];
+
+        $firstName = $_POST['fname'];
+        $lastName = $_POST['lname'];
+        $email = $_POST['email'];
+        $address = $_POST['address'];
+        $fbLink = $_POST['fb_link'];
+        $age = $_POST['age'];
+        $instaLink = $_POST['insta_link'];
+        $password = $_POST['pass'];
+        $gender = $_POST['gender'];
+        $school = $_POST['school'];
+
+        $update_data = mysqli_query($conn, "UPDATE FROM user_profile SET firstName = '$firstName', lastName ='$lastName', email='$email', Address='$address', fbLink='$fbLink', age='$age', instaLink='$instaLink', Password='$password', gender='$gender', school = '$school' WHERE id = '$id'");
+
+        if($update_data == true){
+            ?>
+                <script>
+                    alert("Data updated");
+                    window.location.href="records.php";
+                </script>
+            <?php
+        } else {
+            ?>
+                <script>
+                    alert("No data updated");
+                    window.location.href="records.php";
+                </script>
+            <?php
+        }
+    }
 ?>
