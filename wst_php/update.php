@@ -69,7 +69,7 @@
                 <br>
                 <br>
                 <input type="reset" value="Reset">
-                <input type="submit" value="Update" name="update_profile">
+                <input type="submit" value="Update" name="update_data">
             </form>
         </center>
     </div>
