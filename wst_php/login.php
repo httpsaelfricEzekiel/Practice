@@ -59,7 +59,7 @@
         $gender = $_POST['gender'];
         $school = $_POST['school'];
 
-        $update_data = mysqli_query($conn, "UPDATE user_profile SET firstName = '$firstName', lastName = '$lastName', email = '$email' address = '$address', fbLink = '$fbLink' age = '$age', instaLink = '$instaLink', password = '$password', gender = '$gender', school = '$school' WHERE id = '$id'");
+        $update_data = mysqli_query($conn, "UPDATE user_profile SET firstName = '$firstName', lastName = '$lastName', email = '$email', address = '$address', fbLink = '$fbLink', age = '$age', instaLink = '$instaLink', password = '$password', gender = '$gender', school = '$school' WHERE id = '$id'");
 
         if($update_data == true){
             ?>
