@@ -60,10 +60,7 @@
                 <br>
                 <input type="password" name="pass" placeholder="Enter password" value=<?php echo $password?>  required> 
                 <br>
-                <label>Male</label>
-                <input type="radio" name="gender" value="Male" value=<?php echo $gender?> >
-                <label>Female</label>
-                <input type="radio" name="gender" value="Female" value=<?php echo $gender?>>
+                <input type="text" name="gender" placeholder="Enter sex" value=<?php echo $gender?> required>
                 <br>
                 <input type="text" name="school"  placeholder="Enter college or univeristy"value=<?php echo $school?> required>
                 <br>

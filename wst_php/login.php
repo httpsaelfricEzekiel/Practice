@@ -13,7 +13,7 @@
         $gender = $_POST['gender'];
         $school = $_POST['school'];
         
-        $validate = mysqli_query($conn, "SELECT * FROM user_profile WHERE firstName = '$firstName' AND lastName = '$lastName'");
+        $validate = mysqli_query($conn, "SELECT * FROM user_profile WHERE email = '$email'");
         $number = mysqli_num_rows($validate);
 
         if($number <= 0){
@@ -37,7 +37,7 @@
         } else {
             ?>
                 <script>
-                    alert("First Name is already existed");
+                    alert("Email already exists!");
                     window.location.href="index.php";
                 </script>
             <?php 
@@ -59,7 +59,7 @@
         $gender = $_POST['gender'];
         $school = $_POST['school'];
 
-        $update_data = mysqli_query($conn, "UPDATE user_profile SET firstName = '$firstName', lastName = '$lastName', email = '$email', address = '$address', fbLink = '$fbLink' age = '$age', instaLink = '$instaLink', password = '$password', gender = '$gender', school = '$school' WHERE id = '$id'");
+        $update_data = mysqli_query($conn, "UPDATE user_profile SET firstName = '$firstName', lastName = '$lastName', email = '$email' address = '$address', fbLink = '$fbLink' age = '$age', instaLink = '$instaLink', password = '$password', gender = '$gender', school = '$school' WHERE id = '$id'");
 
         if($update_data == true){
             ?>
