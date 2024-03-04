@@ -46,7 +46,7 @@
     }
 
     if(isset($_POST['update_data'])){
-        $updateID= $_GET['update_id'];
+        $id = $_GET['update_id'];
         
         $firstName = $_POST['fname'];
         $lastName = $_POST['lname'];
@@ -59,7 +59,7 @@
         $gender = $_POST['gender'];
         $school = $_POST['school'];
 
-        $update_data = mysqli_query($conn, "UPDATE FROM user_profile SET firstName = '$firstName', lastName = '$lastName', email='$email', address = '$address', fbLink = '$fbLink' age = '$age', instaLink = '$instaLink', password= '$password', gender = '$gender', school = '$school' WHERE id = '$updateID'");
+        $update_data = mysqli_query($conn, "UPDATE user_profile SET firstName = '$firstName', lastName = '$lastName', email = '$email', address = '$address', fbLink = '$fbLink' age = '$age', instaLink = '$instaLink', password = '$password', gender = '$gender', school = '$school' WHERE id = '$id'");
 
         if($update_data == true){
             ?>

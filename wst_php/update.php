@@ -43,7 +43,7 @@
                 }
             ?>
             <h1>Update Form</h1>
-            <form action="login.php" method="post">
+            <form action="login.php?update_id=<?php echo $update_id?>" method="post">
                 <input type="text" name="fname" placeholder="Enter first name"  value=<?php echo $firstName?>   required>
                 <br>
                 <input type="text" name="lname" placeholder="Enter last nane" value=<?php echo $lastName?>  required>
