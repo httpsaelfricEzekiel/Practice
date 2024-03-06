@@ -1,6 +1,6 @@
 <?php
     include "conn.php";
-    
+
     if(isset($_POST['create_account'])){
         $profile_pic = $_POST['pic'];
         $lastName = $_POST['lastName'];
@@ -31,4 +31,4 @@
             <?php
         }
     }
-?>
+?> 
