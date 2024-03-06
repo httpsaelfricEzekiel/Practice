@@ -97,17 +97,29 @@
           <form action="process.php" method="post" enctype="multipart/form-data">
             <label>Profile Picture</label><br>
             <div class="input-group">
-              <span class="input-group-text">@</span>
+              <span class="input-group-text"><i class="bi bi-person-bounding-box"></i></span>
               <input type="file" class="form-control" required name="pic" accept=".jpg, .jpeg, .png, .gif, .webp, .jfif, .gif">
             </div><br>
+            <label>Last Name</label><br>
             <div class="input-group">
-              <span class="input-group-text">@</span>
-              <input type="text" class="form-control" placeholder="Username">
-            </div>
+              <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+              <input type="text" class="form-control" name="lastName" required>
+            </div><br>
+            <label>First Name</label><br>
             <div class="input-group">
-              <span class="input-group-text">@</span>
-              <input type="text" class="form-control" placeholder="Username">
-            </div>
+              <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+              <input type="text" class="form-control" name="firstName" required>
+            </div><br>
+            <label>Email</label><br>
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-envelope-check-fill"></i></span>
+              <input type="email" class="form-control" name="email" required>
+            </div><br>
+            <label>Password</label><br>
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-key-fill"></i></span>
+              <input type="password" class="form-control" name="password" required>
+            </div><br>
             <div class="modal-footer">
               <input type="reset" class="btn btn-primary" value="Clear">
               <input type="submit" class="btn btn-success" name="create_account" value="Create Account">
