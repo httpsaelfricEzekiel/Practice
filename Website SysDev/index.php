@@ -150,11 +150,11 @@
     <div class="login-container">
         <div class="login-box">
             <div class="logn-img">
-                <img src="img/23_3.jpg" alt="Galaxy">
+                <img src="img/23_3.jpg" alt="Galaxy" id="img">
             </div>
             <div class="login-form">
                 <img src="img/profile.png" alt="Profile">
-                <form method="post" class="form-input" action="login.php">
+                <form action="login.php" method="post" class="form-input">
                     <div class="user-input">
                         <input type="text" name="username" id="user" placeholder="Username" required>
                     </div>
@@ -167,7 +167,7 @@
                         </a>
                     </div>
                     <div class="submit-box">
-                        <input type="submit" value="Login" name="login" id="login">
+                        <input type="submit" value="Login" name="user_login" id="login">
                     </div>
                 </form>
             </div>
