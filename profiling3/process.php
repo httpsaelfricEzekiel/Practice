@@ -19,7 +19,6 @@
             $insert = mysqli_query($conn, "INSERT INTO students VALUES ('0', '$profile_pic', '$lastName', '$firstName', '$email', '$password')");
 
             if($insert == true){
-
                 $fileDestination = "upload/".$profile_pic;
                 move_uploaded_file($fileTmpName, $fileDestination);
                 ?>
@@ -53,19 +52,19 @@
         $pass = $_POST['password'];
 
         $check = mysqli_query($conn, "SELECT * FROM students WHERE email = '$email' AND password = '$pass'");
-
-        if($check == true){
+        $validate = mysqli_num_rows($check);
+        if($validate >= 1){
             ?>
                 <script>
                     alert("Login Successfully");
-                    window.location.href="students/index.php";
+                    window.location.href="students/studentLandingPage/index.php";
                 </script>
             <?php
         } else {
             ?>
                 <script>
-                    alert("Login Unsuccesful");
-                    window.location.href="students/index.php";
+                    alert("Wrong email and password");
+                    window.location.href="index.php";
                 </script>
             <?php
         }
