@@ -94,7 +94,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="forms/process.php" method="post" enctype="multipart/form-data">
+          <form action="process.php" method="post" enctype="multipart/form-data">
             <label>Profile Picture</label><br>
             <div class="input-group">
               <span class="input-group-text"><i class="bi bi-person-bounding-box"></i></span>
@@ -139,7 +139,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="forms/process.php" method="post" enctype="multipart/form-data">
+          <form action="process.php" method="post" enctype="multipart/form-data">
             <label>Email</label><br>
             <div class="input-group">
               <span class="input-group-text"><i class="bi bi-envelope-check-fill"></i></span>

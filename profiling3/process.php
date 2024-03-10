@@ -2,8 +2,11 @@
     include "conn.php";
 
     if(isset($_POST['create_account'])){
+        // input for uploading a photos
         $profile_pic = $_FILES['pic']['name'];
         $fileTmpName = $_FILES['pic']['tmpName'];
+        
+        // inputs for fields/text box
         $lastName = $_POST['lastName'];
         $firstName = $_POST['firstName'];
         $email = $_POST['email'];
@@ -49,6 +52,22 @@
         $email = $_POST['email'];
         $pass = $_POST['password'];
 
-        $check = mysqli_query($conn, )
+        $check = mysqli_query($conn, "SELECT * FROM students WHERE email = '$email' AND password = '$pass'");
+
+        if($check == true){
+            ?>
+                <script>
+                    alert("Login Successfully");
+                    window.location.href="students/index.php";
+                </script>
+            <?php
+        } else {
+            ?>
+                <script>
+                    alert("Login Unsuccesful");
+                    window.location.href="students/index.php";
+                </script>
+            <?php
+        }
     }
 ?> 
