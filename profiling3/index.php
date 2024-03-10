@@ -73,7 +73,7 @@
           <li class="dropdown"><a href="#"><span>Accounts</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#" class="btn btn-default">Login as Admin</a></li>
-              <li><a href="#" class="btn btn-default">Login as Student</a></li>
+              <li><a href="#" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#student_modal">Login as Student</a></li>
               <li><a href="#" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#exampleModal">Create Student's Account</a></li>
             </ul>
           </li>
@@ -94,7 +94,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="process.php" method="post" enctype="multipart/form-data">
+          <form action="forms/process.php" method="post" enctype="multipart/form-data">
             <label>Profile Picture</label><br>
             <div class="input-group">
               <span class="input-group-text"><i class="bi bi-person-bounding-box"></i></span>
@@ -103,22 +103,22 @@
             <label>Last Name</label><br>
             <div class="input-group">
               <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
-              <input type="text" class="form-control" name="lastName" required>
+              <input type="text" class="form-control" name="lastName" placeholder="Enter last name" required>
             </div><br>
             <label>First Name</label><br>
             <div class="input-group">
               <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
-              <input type="text" class="form-control" name="firstName" required>
+              <input type="text" class="form-control" name="firstName" placeholder="Enter first name" required>
             </div><br>
             <label>Email</label><br>
             <div class="input-group">
               <span class="input-group-text"><i class="bi bi-envelope-check-fill"></i></span>
-              <input type="email" class="form-control" name="email" required>
+              <input type="email" class="form-control" name="email" placeholder="Enter email" required>
             </div><br>
             <label>Password</label><br>
             <div class="input-group">
               <span class="input-group-text"><i class="bi bi-key-fill"></i></span>
-              <input type="password" class="form-control" name="password" required>
+              <input type="password" class="form-control" name="password" placeholder="Enter password" required>
             </div><br>
             <div class="modal-footer">
               <input type="reset" class="btn btn-primary" value="Clear">
@@ -130,6 +130,35 @@
     </div>
   </div>
 
+  <!-- Modal for login student -->
+  <div class="modal fade" id="student_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="forms/process.php" method="post" enctype="multipart/form-data">
+            <label>Email</label><br>
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-envelope-check-fill"></i></span>
+              <input type="email" class="form-control" name="email" placeholder="Enter email" required>
+            </div><br>
+            <label>Password</label><br>
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-key-fill"></i></span>
+              <input type="password" class="form-control" name="password" placeholder="Enter password" required>
+            </div><br>
+            <div class="modal-footer">
+              <input type="reset" class="btn btn-primary" value="Clear">
+              <input type="submit" class="btn btn-success" name="student_login" value="Login">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
