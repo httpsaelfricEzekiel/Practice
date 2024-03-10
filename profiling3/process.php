@@ -13,9 +13,9 @@
         $password = $_POST['password'];
 
         $validate = mysqli_query($conn, "SELECT * FROM students WHERE email = '$email'");
-        $number = mysqli_num_rows($validate);
+        $number_email = mysqli_num_rows($validate);
 
-        if($number <= 0){
+        if($number_email <= 0){
             $insert = mysqli_query($conn, "INSERT INTO students VALUES ('0', '$profile_pic', '$lastName', '$firstName', '$email', '$password')");
 
             if($insert == true){
@@ -23,7 +23,7 @@
                 move_uploaded_file($fileTmpName, $fileDestination);
                 ?>
                     <script>
-                        alert("data inserted");
+                        alert("Data inserted");
                         window.location.href="index.php";
                     </script>
                 <?php
