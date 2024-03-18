@@ -4,7 +4,7 @@
     if(isset($_POST['create_account'])){
         // input for uploading a photos
         $profile_pic = $_FILES['pic']['name'];
-        $fileTmpName = $_FILES['pic']['tmpName'];
+        $fileTmpName = $_FILES['pic']['tmp_name'];
         
         // inputs for fields/text box
         $lastName = $_POST['lastName'];
@@ -19,7 +19,7 @@
             $insert = mysqli_query($conn, "INSERT INTO students VALUES ('0', '$profile_pic', '$lastName', '$firstName', '$email', '$password')");
 
             if($insert == true){
-                $fileDestination = "upload/".$profile_pic;
+                $fileDestination = 'upload/'.$profile_pic;
                 move_uploaded_file($fileTmpName, $fileDestination);
                 ?>
                     <script>
