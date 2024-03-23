@@ -181,7 +181,7 @@
             </div><br>
             <div class="modal-footer">
               <input type="reset" class="btn btn-primary" value="Clear">
-              <input type="submit" class="btn btn-success" name="student_login" value="Login">
+              <input type="submit" class="btn btn-success" name="admin_login" value="Login">
             </div>
           </form>
         </div>

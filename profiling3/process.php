@@ -71,4 +71,31 @@
             <?php
         }
     }
+
+    // This code is for admin login
+    if(isset($_POST['admin_login'])){
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        $check = mysqli_query($conn, "SELECT * FROM admin WHERE email = '$email' AND password = '$password'");
+        $check_num = mysqli_num_rows($check);
+
+        if($check_num >= 1){
+            $_SESSION['email'] = $email;
+
+            ?>
+                <script>
+                    alert("Login Successful!");
+                    window.location.href="admin/index.php";
+                </script>
+            <?php
+        } else {
+            ?>
+                <script>
+                    alert("Wrong email and password");
+                    window.location.href="index.php";
+                </script>
+            <?php
+        }
+    }
 ?> 
