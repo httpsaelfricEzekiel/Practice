@@ -4,5 +4,5 @@
     $password = "";
 
     $conn = mysqli_connect($url, $username, $password);
-    $db = mysqli_select_db($conn, "profiling3");
+    $db = mysqli_select_db($conn, "profiling3.4");
 ?>

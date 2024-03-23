@@ -1,5 +1,6 @@
 <?php
     include "conn.php";
+    session_start();
 
     if(isset($_POST['create_account'])){
         // input for uploading a photos
@@ -54,10 +55,11 @@
         $check = mysqli_query($conn, "SELECT * FROM students WHERE email = '$email' AND password = '$pass'");
         $validate = mysqli_num_rows($check);
         if($validate >= 1){
+            $_SESSION['email'] = $email;
             ?>
                 <script>
                     alert("Login Successfully");
-                    window.location.href="students/studentLandingPage/index.php";
+                    window.location.href="students/index.php";
                 </script>
             <?php
         } else {
