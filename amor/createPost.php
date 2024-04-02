@@ -24,5 +24,19 @@
     <a href="createPost.php">Create Post</a>
     <a href="update_profile.php">Update Profile</a>
     <a href="login.php">Logout</a>
+
+
+    <h1>Create Post</h1>
+
+    <form action="process.php" method="post">
+        <label for="">Title</label><br>
+        <input type="text" name="title" id="title" placeholder="What's on your mind?" required></p>
+        <label for="">Select Date</label><br>
+        <input type="date" name="date" id="date" required></p>
+        <label for="">Add Description</label><br>
+        <textarea name="desc" id="desc" cols="50" rows="10"></textarea></p>
+        <input type="hidden" name="posted_by" value=<?php echo $name?>>
+        <input type="submit" name="createPost" value="Post">
+    </form>
 </body>
 </html>

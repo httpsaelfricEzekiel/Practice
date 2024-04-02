@@ -83,4 +83,31 @@
             <?php
         }
     }
+
+    // this line of code is for create post
+
+    if(isset($_POST['createPost'])){
+        $title = $_POST['title'];
+        $date = $_POST['date'];
+        $desc = $_POST['desc'];
+        $posted_by = $_POST['posted_by'];
+
+        $insert = mysqli_query($conn, "INSERT INTO post VALUES ('0', '$title', '$date', '$desc', '$posted_by')");
+
+        if($insert == true){
+            ?>
+                <script>
+                    alert("Post uploaded");
+                    window.location.href="createPost.php";
+                </script>
+            <?php 
+        } else {
+            ?>
+                <script>
+                    alert("Post error");
+                    window.location.href="createPost.php";
+                </script>
+            <?php 
+        }
+    }
 ?>
