@@ -92,7 +92,9 @@
         $desc = $_POST['desc'];
         $posted_by = $_POST['posted_by'];
 
-        $insert = mysqli_query($conn, "INSERT INTO post VALUES ('0', '$title', '$date', '$desc', '$posted_by')");
+        $query = "INSERT INTO post VALUES('0', '$title', '$date', '$desc', '$posted_by')";
+        $insert = mysqli_query($conn, $query);
+        
 
         if($insert == true){
             ?>
