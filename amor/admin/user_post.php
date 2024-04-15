@@ -2,9 +2,9 @@
     include "../conn.php";
     session_start();
 
-    $e = $_SESSION['email'];
+    $email = $_SESSION['email'];
 
-    $query = "SELECT * FROM admin WHERE email = '$e'";
+    $query = "SELECT * FROM admin";
     $get_admin_name = mysqli_query($conn, $query);
 
     while($row = mysqli_fetch_object($get_admin_name)){

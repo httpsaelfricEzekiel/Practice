@@ -35,7 +35,7 @@
         $pass = $_POST['login_pass'];
 
         $query = "SELECT * FROM users WHERE email = '$email' AND password = '$pass'";
-        $check = $conn -> query($query);
+        $check = mysqli_query($conn, $query);
 
         $num = mysqli_num_rows($check);
 

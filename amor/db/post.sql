@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 02, 2024 at 11:59 AM
+-- Generation Time: Apr 15, 2024 at 10:15 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -40,7 +40,13 @@ CREATE TABLE `post` (
 --
 
 INSERT INTO `post` (`id`, `title`, `date`, `desc`, `postBy`) VALUES
-(1, 'asdassdasas', '2024-04-02', 'adasdsadasaa', 'aelfric');
+(1, 'asdassdasas', '2024-04-02', 'adasdsadasaa', 'aelfric'),
+(2, 'asdsadsaas', '2024-04-15', 'asdasdsad', 'aelfric'),
+(3, 'Spider Man', '2024-04-16', 'No Way Home', 'aelfric'),
+(4, 'Justin', '2024-04-15', 'No WAy home', 'Justin'),
+(5, 'dsadsads', '2024-04-15', 'asdasdasd', 'Justin'),
+(6, 'Lovely Runner', '2024-04-15', 'dasdasasdas', 'aelfric'),
+(7, 'dasdasd', '2024-04-15', 'asdasd', 'Justin');
 
 --
 -- Indexes for dumped tables
@@ -60,7 +66,7 @@ ALTER TABLE `post`
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
