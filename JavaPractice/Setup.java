@@ -6,10 +6,10 @@ public class Setup {
 
     public Setup(){
         
-        String userName = JOptionPane.showInputDialog(null, "Enter name ", "Hi pwede ko muna hack account mo hehe", JOptionPane.OK_CANCEL_OPTION);
+        String userName = JOptionPane.showInputDialog(null, "Enter name ", "Hi pwede ko muna hack account mo hehe", JOptionPane.INFORMATION_MESSAGE);
 
         if(userName == null){
-            JOptionPane.showMessageDialog(null, "ulitin moooo", "oppssss mali pag input mooo",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "ulitin moooo", "oppssss mali pag input mooo", JOptionPane.INFORMATION_MESSAGE);
         } else {
             PopupScreen u = new PopupScreen(userName);
             u.popup();
