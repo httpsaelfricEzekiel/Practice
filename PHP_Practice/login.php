@@ -10,7 +10,7 @@
         $emailErr = $passErr = $c_passErr = "";
 
         if(isset($_POST['loginAccount'])){
-            
+
             if(!empty($email)){
                 $email_name = $email;
 
@@ -65,7 +65,6 @@
             }
         } else {
             header("Location: login.php");
-            
         }
     } 
     
