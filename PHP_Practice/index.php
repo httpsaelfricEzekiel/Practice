@@ -1,16 +1,25 @@
 <?php 
     include "conn.php";
     session_start();
-    session_destroy();
+
+    if(empty($_SESSION)){
+        header("Location: login.php");
+    } else {
+        $email = $_SESSION['email'];
+        $password = $_SESSION['password'];
+
+
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
 </head>
 <body>
     <h1>dfasdssadasd</h1>
+    <a href="logout.php">Logout</a>
 </body>
 </html>

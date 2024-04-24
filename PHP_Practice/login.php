@@ -9,34 +9,30 @@
 
         $emailErr = $passErr = $c_passErr = "";
 
-        if(!isset($_POST['loginAccount']) && !isset($_POST['loginAccount'])){
-            header("Location: login.php");
-        } else {
-            if(empty($email)){
-                $emailErr = "Email required!";
-            } else {
+        if(isset($_POST['loginAccount'])){
+            if(!empty($email)){
                 $email_name = $email;
 
-                if($email_name == true){
-                    $check_email = mysqli_query($conn, "SELECT * FROM login_user WHERE username = '$email' AND password = '$password' ");
-                    $validate_email = mysqli_num_rows($check_email);
-
-                    if($validate_email >= 1){
-                        $_SESSION['email'] = $email;
-                        $_SESSION['password'] = $password;
-
-                        header("Location: index.php");
-                    }
-                }
-
                 if(!filter_var($email_name, FILTER_VALIDATE_EMAIL)){
+                    if($email_name == true){
+                        $check_email = mysqli_query($conn, "SELECT * FROM login_user WHERE username = '$email' AND password = '$password' ");
+                        $validate_email = mysqli_num_rows($check_email);
+    
+                        if($validate_email >= 1){
+                            $_SESSION['email'] = $email;
+                            $_SESSION['password'] = $password;
+    
+                            header("Location: index.php");
+                        }
+                    }
+                } else {
                     $emailErr = "Invalid email format!";
                 }
+            } else {
+                $emailErr = "Email required!";
             }
 
-            if(empty($password) && ($password == $c_password)){
-                $passErr = "Password required!";
-            } else {
+            if(!empty($password) && ($password == $c_password)){
                 if(strlen($password) <= '8'){
                     $passErr = "Your password must contain at least 8 characters!";
                 } else if (!preg_match("#[0-9]+#", $password)){
@@ -62,7 +58,12 @@
                         header("Location: index.php");
                     }
                 }
+
+            } else {
+                $passErr = "Password required!";
             }
+        } else {
+            header("Location: login.php");
         }
     } 
 
@@ -84,8 +85,9 @@
 </head>
 <body>
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-        <input type="email" name="email" id="email" placeholder="Enter email"> <span><?php echo $emailErr; ?></span><br>
-        <input type="password" name="pass" id="pass" placeholder="Enter password"> <span><?php echo $passErr; ?></span><br> 
+        <input type="email" name="email" id="email" placeholder="Enter email"> <span class="error">* <?php echo $emailErr; ?></span><br>
+        <input type="password" name="pass" id="pass" placeholder="Enter password"> <span class="error">* <?php echo $passErr; ?></span><br>
+        <a href="register.php">Register</a>
         <button type="submit" name="loginAccount">Login</button>
     </form>
 </body>
