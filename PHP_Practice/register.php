@@ -11,7 +11,7 @@
         $firstNameErr = $lastNameErr = $emailErr = $passwordErr = $c_passwordErr = "";
 
         if(isset($_POST['registerAccount'])){
-            $query = "INSERT INTO login_user VALUES('0', '$first_name', '$last_name', '$email', '$password')";
+            $query = "INSERT INTO login_user VALUES('0', '$first_name', '$last_name', '$email', '$pasw')";
 
             if(empty($first_name)){
                 $firstNameErr = "First name is required!";
