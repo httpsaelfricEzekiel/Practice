@@ -35,7 +35,7 @@
 
             if(!empty($password) && ($password == $c_password)){
                 if(strlen($password) <= '8'){
-                    $passErr = "Your password must contain at least 8 characters!";
+                    $passErr = "Your password must contain at least 8 charters!";
                 } else if (!preg_match("#[0-9]+#", $password)){
                     $passErr = "Your password must contain at least 1 number!";
                 } else if (!preg_match("#[A-Z]+#", $password)){
