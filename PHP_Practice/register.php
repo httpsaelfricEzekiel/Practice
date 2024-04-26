@@ -83,7 +83,8 @@
                 $email_name = $email;
 
                 if(!filter_var($email_name, FILTER_VALIDATE_EMAIL)){
-
+                    $emailErr = "Invalid email format!";
+                } else {
                     if($email_name == true){
                         $check_email = mysqli_query($conn, "SELECT * FROM login_user WHERE username = '$email'");
                         $val_email = mysqli_num_rows($check_email);
@@ -105,34 +106,28 @@
                             $emailErr = "Email already exists!";
                         }
                     } 
-                } else {
-                    $emailErr = "Invalid email format!";
                 }
             }
 
-            if(empty($pasw) OR ($pasw == $c_password)){
+            if(empty($pasw) && ($pasw == $c_password)){
                 $passwordErr = "Password is required!";
+            } else if (strlen($pasw) <= '4'){
+                $passwordErr = "Your password is weak!";
+            } else if(strlen($pasw) <= '8'){
+                $passwordErr = "Your password is moderately strong!";
+            } else if (strlen($pasw) <= '16'){
+                $passwordErr = "Your password is strong!";
+            } else if(!preg_match("#[0-9]+#", $pasw)){
+                $passwordErr = "Your password must contain at least 1 number!";
+            } else if (!preg_match("#[A-Z]+#", $pasw)){
+                $passwordErr = "Your password must contain at least 1 upper case letter!";
+            } else if (!preg_match("#[a-z]+#", $pasw)){
+                $passwordErr = "Your password must contain at least 1 lower case letter!";
             } else {
-                if(strlen($pasw) <= '4'){
-                    $passwordErr = "Your password is weak!";
-                } else if(strlen($pasw) <= '8'){
-                    $passwordErr = "Your password is moderately strong!";
-                } else if(strlen($pasw) <= '16'){ 
-                    $passwordErr = "Your password is strong!";
-                } else if(!preg_match("#[0-9]+#", $pasw)){
-                    $passwordErr = "Your password must contain at least 1 number!";
-                } else if (!preg_match("#[A-Z]+#", $pasw)){
-                    $passwordErr = "Your password must contain at least 1 upper case letter!";
-                } else if (!preg_match("#[a-z]+#", $pasw)){
-                    $passwordErr = "Your password must contain at least 1 lower case letter!";
-                } else {
-                    $c_passwordErr = "Check you've entered your or Confirm your password!";
-                }
-
                 $psw = $pasw;
 
                 if($psw == true){
-                    
+
                     $check_pass = mysqli_query($conn, "SELECT * FROM login_user WHERE password = '$pasw'");
                     $val_pass = mysqli_num_rows($check_pass);
 
