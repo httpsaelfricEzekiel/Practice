@@ -5,13 +5,13 @@
         $first_name = test_input($_POST['firstName']);
         $last_name = test_input($_POST['lastName']);
         $email = test_input($_POST['email']);
-        $pasw = test_input($_POST['pass']);
+        $pass = test_input($_POST['pass']);
         $c_password = test_input($_POST['pass']);
 
         $firstNameErr = $lastNameErr = $emailErr = $passwordErr = $c_passwordErr = "";
 
         if(isset($_POST['registerAccount'])){
-            $query = "INSERT INTO login_user VALUES('0', '$first_name', '$last_name', '$email', '$pasw')";
+            $query = "INSERT INTO login_user VALUES('0', '$first_name', '$last_name', '$email', '$pass')";
 
             if(empty($first_name)){
                 $firstNameErr = "First name is required!";
@@ -128,7 +128,7 @@
 
                 if($psw == true){
 
-                    $check_pass = mysqli_query($conn, "SELECT * FROM login_user WHERE password = '$pasw'");
+                    $check_pass = mysqli_query($conn, "SELECT * FROM login_user WHERE password = '$pass'");
                     $val_pass = mysqli_num_rows($check_pass);
 
                     if($val_pass <= 0){
