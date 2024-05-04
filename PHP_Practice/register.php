@@ -11,7 +11,7 @@
         $firstNameErr = $lastNameErr = $emailErr = $passwordErr = $c_passwordErr = "";
 
         if(isset($_POST['registerAccount'])){
-            $query = "INSERT INTO login_user VALUES('0', '$first_name', '$last_name', '$email', '$pass')";
+            $insertQuery = "INSERT INTO login_user VALUES('0', '$first_name', '$last_name', '$email', '$pass')";
 
             if(empty($first_name)){
                 $firstNameErr = "First name is required!";
@@ -26,7 +26,7 @@
                         $val_fname = mysqli_num_rows($check_firstName);
 
                         if($val_fname <= 0){
-                            $insert_fname = mysqli_query($conn, $query);
+                            $insert_fname = mysqli_query($conn, $insertQuery);
 
                             if($insert_fname == true){
                                 header("Location: register.php");
@@ -58,7 +58,7 @@
                         $val_lastName = mysqli_num_rows($check_lastName);
 
                         if($val_lastName <= 0){
-                            $insert_lastName = mysqli_query($conn, $query);
+                            $insert_lastName = mysqli_query($conn, $insertQuery);
 
                             if($insert_lastName == true){
                                 header("Location: register.php");
@@ -90,7 +90,7 @@
                         $val_email = mysqli_num_rows($check_email);
 
                         if($val_email <= 0){
-                            $insert_email = mysqli_query($conn, $query);
+                            $insert_email = mysqli_query($conn, $insertQuery);
 
                             if($insert_email == true){
                                 header("Location: register.php");
@@ -109,22 +109,22 @@
                 }
             }
 
-            if(empty($pasw) && ($pasw == $c_password)){
+            if(empty($pass) && ($pass == $c_password)){
                 $passwordErr = "Password is required!";
-            } else if (strlen($pasw) <= '4'){
+            } else if (strlen($pass) <= '4'){
                 $passwordErr = "Your password is weak!";
-            } else if(strlen($pasw) <= '8'){
+            } else if(strlen($pass) <= '8'){
                 $passwordErr = "Your password is moderately strong!";
-            } else if (strlen($pasw) <= '16'){
+            } else if (strlen($pass) <= '16'){
                 $passwordErr = "Your password is strong!";
-            } else if(!preg_match("#[0-9]+#", $pasw)){
+            } else if(!preg_match("#[0-9]+#", $pass)){
                 $passwordErr = "Your password must contain at least 1 number!";
-            } else if (!preg_match("#[A-Z]+#", $pasw)){
+            } else if (!preg_match("#[A-Z]+#", $pass)){
                 $passwordErr = "Your password must contain at least 1 upper case letter!";
-            } else if (!preg_match("#[a-z]+#", $pasw)){
+            } else if (!preg_match("#[a-z]+#", $pass)){
                 $passwordErr = "Your password must contain at least 1 lower case letter!";
             } else {
-                $psw = $pasw;
+                $psw = $pass;
 
                 if($psw == true){
 
@@ -147,8 +147,10 @@
                     } else {
                         $passwordErr = "Password already exists!";
                     }
-                } 
-            }
+                } else {
+                    $passwordErr = "Password is not set!";
+                }
+            } 
         } 
     }
 
