@@ -28,11 +28,20 @@
     top: 5.5rem;
     width: 20rem;
 }
-.email-input:focus-within label {
+.email-input:focus-within [for="email"] {
     top: 0;
     font-size: 12px;
 }
-label {
+[for="email"] {
+    position: absolute;
+    top: 74%;
+    left: 1px;
+    transform: translateY(-50%);
+    color: black;
+    padding: 0 5px;
+    transition: all 0.2s ease-in-out;
+}
+[for="password"] {
     position: absolute;
     top: 74%;
     left: 1px;
@@ -46,7 +55,7 @@ label {
     bottom: 8.5rem;
     width: 20rem;
 }
-.password-input:focus-within label {
+.password-input:focus-within [for="password"] {
     top: 0;
     font-size: 12px;
 }
