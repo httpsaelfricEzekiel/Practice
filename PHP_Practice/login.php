@@ -91,12 +91,22 @@
 </head>
 <body>
     <div class="container">
-        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-            <input type="email" name="email" id="email" placeholder="Enter email"> <span>* <?php echo $emailErr; ?></span><br>
-            <input type="password" name="pass" id="pass" placeholder="Enter password"> <span>* <?php echo $passErr; ?></span><br>
-            <a href="register.php">Register</a>
-            <button type="submit" name="loginAccount">Login</button>
-        </form>
+        <div class="login-box">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+                <div class="email-input">
+                    <label for="email">Enter Email</label><br>
+                    <input type="email" name="email" id="email"> <span class="error">* <?php echo $emailErr; ?></span><br>
+                </div>
+                <div class="password-input">
+                    <label for="password">Enter Password</label><br>
+                    <input type="password" name="pass" id="pass"> <span class="error">* <?php echo $passErr; ?></span><br>
+                </div>
+                <div class="submit-box">
+                    <a href="register.php">Register</a>
+                    <button type="submit" name="loginAccount">Login</button>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 </html>

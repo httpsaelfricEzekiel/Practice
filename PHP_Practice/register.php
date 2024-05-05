@@ -39,7 +39,7 @@
                                 <?php
                             }
                         } else {
-                            $firstNameErr = "First name already taken!";
+                            $firstNameErr = "First name already exists!";
                         }
                     }
                 }
@@ -132,7 +132,7 @@
                     $val_pass = mysqli_num_rows($check_pass);
 
                     if($val_pass <= 0){
-                        $insert_pass = mysqli_query($conn, $query);
+                        $insert_pass = mysqli_query($conn, $insertQuery);
 
                         if($insert_pass == true){
                             header("Location: register.php");
@@ -166,6 +166,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <?php
+        ?>
+            <link rel="stylesheet" href="assets/css/style.css">
+        <?php
+    ?>
     <title>Register</title>
 </head>
 <body>
