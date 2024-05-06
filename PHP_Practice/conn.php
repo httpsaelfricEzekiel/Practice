@@ -5,4 +5,5 @@
 
     $conn = mysqli_connect($url, $username, $password);
     $db = mysqli_select_db($conn, "portfolio");
+
 ?>

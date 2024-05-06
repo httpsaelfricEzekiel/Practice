@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 26, 2024 at 10:12 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: May 06, 2024 at 09:44 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,7 +41,8 @@ CREATE TABLE `login_user` (
 
 INSERT INTO `login_user` (`id`, `firstName`, `lastName`, `username`, `password`) VALUES
 (51, 'Gabriel', 'Limsiaco', 'gabriel@gmail.com', ''),
-(52, 'Aelfric', 'Ezekiel', 'ezekiel@gmail.com', '');
+(52, 'Aelfric', 'Ezekiel', 'ezekiel@gmail.com', ''),
+(53, 'Maloi', 'Ricalde', 'bini_maloi@gmail.com', 'Maloi_yves');
 
 --
 -- Indexes for dumped tables
@@ -61,7 +62,7 @@ ALTER TABLE `login_user`
 -- AUTO_INCREMENT for table `login_user`
 --
 ALTER TABLE `login_user`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

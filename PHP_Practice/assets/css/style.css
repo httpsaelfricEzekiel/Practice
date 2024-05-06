@@ -20,44 +20,60 @@
     padding: 10rem;
     display: block;
     border-radius: 30px;
-    width: 20rem;
+    width: 15rem;
+    height: 5rem;
     background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 }
 .email-input {
     position: absolute;
-    top: 5.5rem;
-    width: 20rem;
+    top: 8.5rem;
+    left: 11.1rem;
+    display:flex;
+    flex-direction: column;
 }
-.email-input:focus-within [for="email"] {
-    top: 0;
-    font-size: 12px;
-}
-[for="email"] {
+[for="email"]{
     position: absolute;
-    top: 74%;
-    left: 1px;
-    transform: translateY(-50%);
+    top: 30%;
+    left: 10px;
+    transform: translateY(-5%);
+    background-color: white;
     color: black;
     padding: 0 5px;
     transition: all 0.2s ease-in-out;
 }
-[for="password"] {
-    position: absolute;
-    top: 74%;
-    left: 1px;
-    transform: translateY(-50%);
-    color: black;
-    padding: 0 5px;
-    transition: all 0.2s ease-in-out;
+.email-input:focus-within [for="email"]{
+    top: 10px;
+    font-size: 16px;
+}
+#email {
+    padding: 5px 5px;
+    width: 200px;
+    box-sizing: border-box;
 }
 .password-input {
     position: absolute;
-    bottom: 8.5rem;
-    width: 20rem;
+    bottom:7.5rem;
+    left: 11.1rem;
+    display: flex;
+    flex-direction: column;
 }
-.password-input:focus-within [for="password"] {
-    top: 0;
-    font-size: 12px;
+[for="pass"]{
+    position: absolute;
+    top: 30%;
+    left: 10px;
+    transform: translateX(-5%);
+    background-color: white;
+    color: black;
+    transition: all 0.2s ease-in-out;
+}
+.password-input:focus-within [for="pass"]{
+    top: 10px;
+    font-size: 16px;
+}
+#pass {
+    padding: 5px 5px;
+    width: 200px;
+    box-sizing: border-box;
 }
 .submit-box {
     position: absolute;

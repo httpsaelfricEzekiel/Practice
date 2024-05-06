@@ -7,7 +7,7 @@
         $password = test_input($_POST['pass']);
         $c_password = test_input($_POST['pass']);
 
-        $emailErr = $passErr = $c_passErr = "";
+        $emailErr = $passErr = $c_passErr = " ";
 
         if(isset($_POST['loginAccount'])){
 
@@ -32,7 +32,7 @@
             } else {
                 $emailErr = "Email required!";
             }
-
+            
             if(!empty($password) && ($password == $c_password)){
                 if(strlen($password) <= '8'){
                     $passErr = "Your password must contain at least 8 charters!";
@@ -94,11 +94,11 @@
         <div class="login-box">
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                 <div class="email-input">
-                    <label for="email">Enter Email</label><br>
+                    <label for="email">Email</label><br>
                     <input type="email" name="email" id="email"> <span class="error">* <?php echo $emailErr; ?></span><br>
                 </div>
                 <div class="password-input">
-                    <label for="password">Enter Password</label><br>
+                    <label for="pass">Password</label><br>
                     <input type="password" name="pass" id="pass"> <span class="error">* <?php echo $passErr; ?></span><br>
                 </div>
                 <div class="submit-box">
