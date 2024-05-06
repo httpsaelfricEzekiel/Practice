@@ -177,8 +177,8 @@
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
         <input type="text" name="firstName" id="firstName" placeholder="Enter first name"> <span> * <?php echo $firstNameErr; ?></span> <br>
         <input type="text" name="lastName" id="lastName" placeholder="Enter last name"> <span> * <?php echo $lastNameErr; ?></span><br>
-        <input type="email" name="email" id="email" placeholder="Enter email"> <span> * <?php echo $emailErr; ?></span><br>
-        <input type="password" name="pass" id="pass" placeholder="Enter password"> <span>* <?php echo $passwordErr; ?></span><br>
+        <input type="email" name="email" id="email_1" placeholder="Enter email"> <span> * <?php echo $emailErr; ?></span><br>
+        <input type="password" name="pass" id="pass_1" placeholder="Enter password"> <span>* <?php echo $passwordErr; ?></span><br>
         <a href="login.php">Login</a>
         <button type="submit" name="registerAccount">Register</button>
     </form>
