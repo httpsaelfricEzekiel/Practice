@@ -112,6 +112,9 @@
                     <label for="pass">Password</label><br>
                     <input type="password" name="pass" id="pass"> <span class="error">*  <?php echo $passErr ?></span><br>
                 </div>
+                <div class="forgot-box">
+                    <span><a href="">Forgot your password?</a></span>
+                </div>
                 <div class="submit-box">
                     <a href="register.php">Register</a>
                     <button type="submit" name="loginAccount">Login</button>

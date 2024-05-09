@@ -32,6 +32,7 @@
 }
 .login-h1 h1 {
     font-family: Verdana, Geneva, Tahoma, sans-serif Lato;
+    color: black;
 }
 .email-input {
     position: absolute;
@@ -97,6 +98,17 @@
 }
 #pass:focus {
     border: black solid 2px;
+}
+.forgot-box {
+    position: absolute;
+    bottom: 6.7rem;
+    left: 8.7rem;
+}
+.forgot-box span {
+    display: inline-block;
+}
+.forgot-box a {
+    text-decoration: none;
 }
 .submit-box {
     position: absolute;
