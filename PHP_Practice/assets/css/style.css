@@ -26,15 +26,15 @@
 }
 .email-input {
     position: absolute;
-    top: 8.5rem;
-    left: 11.1rem;
+    top: 6.5rem;
+    left: 8.5rem;
     display:flex;
     flex-direction: column;
 }
 [for="email"]{
     position: absolute;
     top: 30%;
-    left: 10px;
+    left: 15px;
     transform: translateY(-5%);
     background-color: white;
     color: black;
@@ -47,15 +47,20 @@
     font-size: 16px;
 }
 #email {
-    padding: 5px 5px;
-    width: 200px;
+    border: black solid 1px;
+    border-radius: 30px;
+    padding: 10px 10px;
+    width: 300px;
     box-sizing: border-box;
     cursor: pointer;
 }
+#email:focus {
+    border: black solid 1px;
+}
 .password-input {
     position: absolute;
-    bottom:7.5rem;
-    left: 11.1rem;
+    bottom:8.5rem;
+    left: 8.5rem;
     display: flex;
     flex-direction: column;
 }
@@ -74,10 +79,15 @@
     font-size: 16px;
 }
 #pass {
-    padding: 5px 5px;
-    width: 200px;
+    border: solid black 1px;
+    padding: 10px 5px;
+    width: 300px;
+    border-radius: 30px;
     box-sizing: border-box;
     cursor: pointer;
+}
+#pass:focus {
+    border: black solid 2px;
 }
 .submit-box {
     position: absolute;

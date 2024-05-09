@@ -1,5 +1,5 @@
 <?php 
-    include "conn.php";
+    require "conn.php";
     session_start();
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -45,19 +45,21 @@
                 } else {
                     $c_passErr = "Check you've entered your or Confirm your password!";
                 }
-
                 $pass = $password;
+                $passHash = password_hash($pass, PASSWORD_DEFAULT);
 
-                if($pass == true){
-                    $check_password = mysqli_query($conn, "SELECT * FROM login_user WHERE username = '$email' AND password = '$password' ");
+                if(password_verify($pass, $passHash)){
+                    $check_password = mysqli_query($conn, "SELECT * FROM login_user WHERE username = '$email' AND password = '$pass' ");
                     $val_password = mysqli_num_rows($check_password);
 
                     if($val_password >= 1){
                         $_SESSION['email'] = $email;
-                        $_SESSION['password'] = $password;
+                        $_SESSION['password'] = $pass;
 
                         header("Location: index.php");
                     }
+                } else {
+                    $passErr = "Incorrect password!";
                 }
 
             } else {

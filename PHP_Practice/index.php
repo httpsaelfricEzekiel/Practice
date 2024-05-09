@@ -24,7 +24,6 @@
 </head>
 <body>
     <h1>hi <?php echo $firstName . " " . $lastName; ?></h1>
-    
     <a href="logout.php">Logout</a>
 </body>
 </html>
