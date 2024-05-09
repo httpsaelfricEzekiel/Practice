@@ -45,6 +45,7 @@
                 } else {
                     $c_passErr = "Check you've entered your or Confirm your password!";
                 }
+
                 $pass = $password;
                 $passHash = password_hash($pass, PASSWORD_DEFAULT);
 
@@ -66,9 +67,11 @@
                 $passErr = "Password required!";
             }
         } else {
-            header("Location: login.php");
+            echo "Error! input is not set!";
         }
-    } 
+    } else {
+        echo "Error in requesting post method!";
+    }
     
     function test_input($data){
         $data = trim($data);
@@ -85,7 +88,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
-        ?>
+        ?>  
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
             <link rel="stylesheet" href="assets/css/style.css">
         <?php
     ?>
@@ -94,14 +100,17 @@
 <body>
     <div class="container">
         <div class="login-box">
-            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+            <div class="login-h1">
+                <h1>Login</h1>
+            </div>
+            <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data">
                 <div class="email-input">
                     <label for="email">Email</label><br>
                     <input type="email" name="email" id="email"> <span class="error">* <?php echo $emailErr; ?></span><br>
                 </div>
                 <div class="password-input">
                     <label for="pass">Password</label><br>
-                    <input type="password" name="pass" id="pass"> <span class="error">* <?php echo $passErr; ?></span><br>
+                    <input type="password" name="pass" id="pass"> <span class="error">*  <?php echo $passErr ?></span><br>
                 </div>
                 <div class="submit-box">
                     <a href="register.php">Register</a>

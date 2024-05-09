@@ -1,5 +1,5 @@
 <?php 
-    include "conn.php";
+    require "conn.php";
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         $first_name = test_input($_POST['firstName']);
@@ -19,7 +19,7 @@
                 $firstName = $first_name;
 
                 if(!preg_match("/^[a-zA-Z-' ]*$/", $firstName)){
-                    $firstNameErr = "Only letters and white spaces required!";
+                    $firstNameErr = "Letters and white spaces required!";
                 } else {
                     if($firstName == true){
                         $check_firstName = mysqli_query($conn, "SELECT * FROM login_user WHERE firstName = '$first_name'");
@@ -51,7 +51,7 @@
                 $lastName = $last_name;
 
                 if(!preg_match("/^[a-zA-Z-' ]*$/", $lastName)){
-                    $lastNameErr = "Only letters and white spaces required!";
+                    $lastNameErr = "Letters and white spaces required!";
                 } else {
                     if($lastName == true){
                         $check_lastName = mysqli_query($conn, "SELECT * FROM login_user WHERE lastName = '$last_name'");
