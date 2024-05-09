@@ -67,7 +67,7 @@
                 $passErr = "Password required!";
             }
         } else {
-            echo "Error! input is not set!";
+            echo "Error! Input hasn't been set!";
         }
     } else {
         echo "Error in requesting post method!";

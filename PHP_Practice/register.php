@@ -14,7 +14,7 @@
             $insertQuery = "INSERT INTO login_user VALUES('0', '$first_name', '$last_name', '$email', '$pass')";
 
             if(empty($first_name)){
-                $firstNameErr = "First name is required!";
+                $firstNameErr = "First name required!";
             } else {
                 $firstName = $first_name;
 
@@ -46,7 +46,7 @@
             }
 
             if(empty($last_name)){
-                $lastNameErr = "Last name is required!";
+                $lastNameErr = "Last name required!";
             } else {
                 $lastName = $last_name;
 
@@ -71,14 +71,14 @@
                                 <?php
                             }
                         } else {
-                            $lastNameErr = "Last name already taken!";
+                            $lastNameErr = "Last name already exists!";
                         }
                     } 
                 }
             }
 
             if(empty($email)){
-                $emailErr = "Email is required!";
+                $emailErr = "Email required!";
             } else {
                 $email_name = $email;
 
@@ -110,7 +110,7 @@
             }
 
             if(empty($pass) && ($pass == $c_password)){
-                $passwordErr = "Password is required!";
+                $passwordErr = "Password required!";
             } else if (strlen($pass) <= '4'){
                 $passwordErr = "Your password is weak!";
             } else if(strlen($pass) <= '8'){
@@ -151,7 +151,11 @@
                     $passwordErr = "Password is not set!";
                 }
             } 
-        } 
+        } else {
+            echo "Error! Input hasn't been set!";
+        }
+    } else {
+        echo "Error in requesting post method!";
     }
 
     function test_input($data){
