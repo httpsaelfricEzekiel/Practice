@@ -34,8 +34,12 @@
             }
             
             if(!empty($password) && ($password == $c_password)){
-                if(strlen($password) <= '8'){
+                if(strlen($password) <= '4'){
+                    $passErr = "Your password must contain at least 4charters!";
+                } else if(strlen($password) <= '8') {
                     $passErr = "Your password must contain at least 8 charters!";
+                } else if(strlen($password) <= '16'){
+                    $passErr = "Your password must contain at least 16 charters!";
                 } else if (!preg_match("#[0-9]+#", $password)){
                     $passErr = "Your password must contain at least 1 number!";
                 } else if (!preg_match("#[A-Z]+#", $password)){
@@ -47,8 +51,9 @@
                 }
 
                 $pass = $password;
-                $passHash = password_hash($pass, PASSWORD_DEFAULT);
+                $passHash = password_hash($pass, PASSWORD_DEFAULT); // this line of code is encrypting your password
 
+                // verifying your input if your input is correct
                 if(password_verify($pass, $passHash)){
                     $check_password = mysqli_query($conn, "SELECT * FROM login_user WHERE username = '$email' AND password = '$pass' ");
                     $val_password = mysqli_num_rows($check_password);
@@ -103,7 +108,7 @@
             <div class="login-h1">
                 <h1>Login</h1>
             </div>
-            <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data">
                 <div class="email-input">
                     <label for="email">Email</label><br>
                     <input type="email" name="email" id="email"> <span class="error">* <?php echo $emailErr; ?></span><br>
