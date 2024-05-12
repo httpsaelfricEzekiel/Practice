@@ -27,7 +27,7 @@
                         }
                     }
                 } else {
-                    $emailErr = "Invalid email format!";
+                    $emailErr = "Incorrect email format!";
                 }
             } else {
                 $emailErr = "Email required!";
@@ -35,11 +35,11 @@
             
             if(!empty($password) && ($password == $c_password)){
                 if(strlen($password) <= '4'){
-                    $passErr = "Your password must contain at least 4charters!";
+                    $passErr = "Your password must contain at least 4 characters!";
                 } else if(strlen($password) <= '8') {
-                    $passErr = "Your password must contain at least 8 charters!";
+                    $passErr = "Your password must contain at least 8 characters!";
                 } else if(strlen($password) <= '16'){
-                    $passErr = "Your password must contain at least 16 charters!";
+                    $passErr = "Your password must contain at least 16 characters!";
                 } else if (!preg_match("#[0-9]+#", $password)){
                     $passErr = "Your password must contain at least 1 number!";
                 } else if (!preg_match("#[A-Z]+#", $password)){
@@ -52,7 +52,6 @@
 
                 $pass = $password;
                 $passHash = password_hash($pass, PASSWORD_DEFAULT); // this line of code is encrypting your password
-
                 // verifying your input if your input is correct
                 if(password_verify($pass, $passHash)){
                     $check_password = mysqli_query($conn, "SELECT * FROM login_user WHERE username = '$email' AND password = '$pass' ");
