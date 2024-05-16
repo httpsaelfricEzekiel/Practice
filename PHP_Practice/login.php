@@ -33,27 +33,12 @@
                 $emailErr = "Email required!";
             }
             
-            if(!empty($password) && ($password == $c_password)){
-                if(strlen($password) <= '4'){
-                    $passErr = "Your password must contain at least 4 characters!";
-                } else if(strlen($password) <= '8') {
-                    $passErr = "Your password must contain at least 8 characters!";
-                } else if(strlen($password) <= '16'){
-                    $passErr = "Your password must contain at least 16 characters!";
-                } else if (!preg_match("#[0-9]+#", $password)){
-                    $passErr = "Your password must contain at least 1 number!";
-                } else if (!preg_match("#[A-Z]+#", $password)){
-                    $passErr = "Your password must contain at least 1 upper case letter!";
-                } else if (!preg_match("#[a-z]+#", $password)){
-                    $passErr = "Your password must contain at least 1 lower case letter!";
-                } else {
-                    $c_passErr = "Check you've entered your or Confirm your password!";
-                }
-
+            if(!empty($password)){
                 $pass = $password;
                 $passHash = password_hash($pass, PASSWORD_DEFAULT); // this line of code is encrypting your password
+
                 // verifying your input if your input is correct
-                if(password_verify($pass, $passHash)){
+                if(password_verify($pass, $passHash) && ($password == $c_password)){
                     $check_password = mysqli_query($conn, "SELECT * FROM login_user WHERE username = '$email' AND password = '$pass' ");
                     $val_password = mysqli_num_rows($check_password);
 
@@ -63,6 +48,18 @@
 
                         header("Location: index.php");
                     }
+                } else if(strlen($password) <= '4') {
+                    $passErr = "Your password must contain at least 4 characters!";
+                }else if(strlen($password) <= '8') {
+                    $passErr = "Your password must contain at least 8 characters!";
+                } else if(strlen($password) <= '16'){
+                    $passErr = "Your password must contain at least 16 characters!";
+                } else if (!preg_match("#[0-9]+#", $password)){
+                    $passErr = "Your password must contain at least 1 number!";
+                } else if (!preg_match("#[A-Z]+#", $password)){
+                    $passErr = "Your password must contain at least 1 upper case letter!";
+                } else if (!preg_match("#[a-z]+#", $password)){
+                    $passErr = "Your password must contain at least 1 lower case letter!";
                 } else {
                     $passErr = "Incorrect password!";
                 }
@@ -107,7 +104,7 @@
             <div class="login-h1">
                 <h1>Login</h1>
             </div>
-            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" id="loginForm">
                 <div class="email-input">
                     <label for="email">Email</label><br>
                     <input type="email" name="email" id="email"> <span class="error">* <?php echo $emailErr; ?></span><br>
@@ -121,10 +118,16 @@
                 </div>
                 <div class="submit-box">
                     <a href="register.php">Register</a>
-                    <button type="submit" name="loginAccount">Login</button>
+                    <button type="submit" name="loginAccount" onsubmit="subForm()">Login</button>
                 </div>
             </form>
         </div>
     </div>
+
+    <?php 
+        ?>
+            <script src="assets/js/script.js"></script>
+        <?php
+    ?>
 </body>
 </html>

@@ -65,6 +65,9 @@
     box-sizing: border-box;
     cursor: pointer;
 }
+#email:invalid {
+    border: red solid 5px;
+}
 #email:focus {
     border: black solid 1px;
 }
@@ -97,6 +100,9 @@
     border-radius: 30px;
     box-sizing: border-box;
     cursor: pointer;
+}
+#pass.error {
+    border-color: red;
 }
 #pass:focus {
     border: black solid 2px;
