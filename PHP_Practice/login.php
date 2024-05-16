@@ -33,22 +33,8 @@
                 $emailErr = "Email required!";
             }
             
-            if(!empty($password)){
-                $pass = $password;
-                $passHash = password_hash($pass, PASSWORD_DEFAULT); // this line of code is encrypting your password
-
-                // verifying your input if your input is correct
-                if(password_verify($pass, $passHash) && ($password == $c_password)){
-                    $check_password = mysqli_query($conn, "SELECT * FROM login_user WHERE username = '$email' AND password = '$pass' ");
-                    $val_password = mysqli_num_rows($check_password);
-
-                    if($val_password >= 1){
-                        $_SESSION['email'] = $email;
-                        $_SESSION['password'] = $pass;
-
-                        header("Location: index.php");
-                    }
-                } else if(strlen($password) <= '4') {
+            if(!empty($password) && ($password == $c_password)){
+                if(strlen($password) <= '4') {
                     $passErr = "Your password must contain at least 4 characters!";
                 }else if(strlen($password) <= '8') {
                     $passErr = "Your password must contain at least 8 characters!";
@@ -60,6 +46,22 @@
                     $passErr = "Your password must contain at least 1 upper case letter!";
                 } else if (!preg_match("#[a-z]+#", $password)){
                     $passErr = "Your password must contain at least 1 lower case letter!";
+                }
+
+                $pass = $password;
+                $passHash = password_hash($pass, PASSWORD_DEFAULT); // this line of code is encrypting your password
+
+                // verifying your input if your input is correct
+                if(password_verify($pass, $passHash)){
+                    $check_password = mysqli_query($conn, "SELECT * FROM login_user WHERE username = '$email' AND password = '$pass' ");
+                    $val_password = mysqli_num_rows($check_password);
+
+                    if($val_password >= 1){
+                        $_SESSION['email'] = $email;
+                        $_SESSION['password'] = $pass;
+
+                        header("Location: index.php");
+                    }
                 } else {
                     $passErr = "Incorrect password!";
                 }
