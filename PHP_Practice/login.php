@@ -120,7 +120,7 @@
                 </div>
                 <div class="submit-box">
                     <a href="register.php">Register</a>
-                    <button type="submit" name="loginAccount" onclick="subForm()">Login</button>
+                    <button type="submit" name="loginAccount" onsubmit="subForm()">Login</button>
                 </div>
             </form>
         </div>
