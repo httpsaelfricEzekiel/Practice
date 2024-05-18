@@ -3,13 +3,14 @@
     session_start();
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $login_user = $_POST['loginAccount'];
         $email = test_input($_POST['email']);
         $password = test_input($_POST['pass']);
         $c_password = test_input($_POST['pass']);
 
         $emailErr = $passErr = $c_passErr = " ";
 
-        if(isset($_POST['loginAccount'])){
+        if(isset($login_user)){
 
             if(!empty($email)){
                 $email_name = $email;
@@ -34,9 +35,9 @@
             }
             
             if(!empty($password) && ($password == $c_password)){
-                if(strlen($password) <= '4') {
+                if(strlen($password) <= '4' ){
                     $passErr = "Your password must contain at least 4 characters!";
-                }else if(strlen($password) <= '8') {
+                } else if(strlen($password) <= '8') {
                     $passErr = "Your password must contain at least 8 characters!";
                 } else if(strlen($password) <= '16'){
                     $passErr = "Your password must contain at least 16 characters!";
@@ -62,7 +63,7 @@
 
                         header("Location: index.php");
                     }
-                } else {
+                } else { 
                     $passErr = "Incorrect password!";
                 }
 
@@ -70,12 +71,12 @@
                 $passErr = "Password required!";
             }
         } else {
-            echo "Error! Input hasn't been set!";
+            echo "Error! In Logging in!";
         }
+
     } else {
         echo "Error in requesting post method!";
     }
-    
     function test_input($data){
         $data = trim($data);
         $data = stripslashes($data);
@@ -119,8 +120,7 @@
                     <span><a href="">Forgot your password?</a></span>
                 </div>
                 <div class="submit-box">
-                    <a href="register.php">Register</a>
-                    <button type="submit" name="loginAccount" onsubmit="subForm()">Login</button>
+                    <input class="login-button" type="submit" name="loginAccount" onsubmit="subForm()" value="Login">
                 </div>
             </form>
         </div>

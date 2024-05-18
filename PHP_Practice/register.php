@@ -29,7 +29,12 @@
                             $insert_fname = mysqli_query($conn, $insertQuery);
 
                             if($insert_fname == true){
-                                header("Location: register.php");
+                                ?>
+                                    <script>
+                                        alert("Registered Successfully! ");
+                                        window.location.href="register.php";
+                                    </script>
+                                <?php
                             } else {
                                 ?>
                                     <script>
@@ -61,7 +66,12 @@
                             $insert_lastName = mysqli_query($conn, $insertQuery);
 
                             if($insert_lastName == true){
-                                header("Location: register.php");
+                                ?>
+                                    <script>
+                                        alert("Registered Successfully! ");
+                                        window.location.href="register.php";
+                                    </script>
+                                <?php
                             } else {
                                 ?>
                                     <script>
@@ -93,7 +103,12 @@
                             $insert_email = mysqli_query($conn, $insertQuery);
 
                             if($insert_email == true){
-                                header("Location: register.php");
+                                ?>
+                                    <script>
+                                        alert("Registered Successfully! ");
+                                        window.location.href="register.php";
+                                    </script>
+                                <?php
                             } else {
                                 ?>
                                     <script>
@@ -135,7 +150,12 @@
                         $insert_pass = mysqli_query($conn, $insertQuery);
 
                         if($insert_pass == true){
-                            header("Location: register.php");
+                            ?>
+                                <script>
+                                    alert("Registered Successfully! ");
+                                    window.location.href="register.php";
+                                </script>
+                            <?php
                         } else {
                             ?>
                                 <script>

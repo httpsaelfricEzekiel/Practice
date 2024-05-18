@@ -1,6 +1,6 @@
 const subForm = () => {
     const loginForm = document.getElementById('loginForm');
-    loginForm.addEventListener('submit', (e)=> {
+    loginForm.addEventListener('submit', (e) => {
         if(!validForm){
             e.preventDefault();
         }
@@ -24,3 +24,4 @@ const subForm = () => {
         }
     });
 }
+subForm();

@@ -121,5 +121,25 @@
 .submit-box {
     position: absolute;
     bottom: 3.5rem;
-    left: 15rem;
+    left: 8.6rem;
+}
+.submit-box .login-button {
+    width: 300px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    font-family: inherit;
+}
+.login-button:hover {
+    background-color: black;
+    color: white;
+}
+.login-button:focus {
+    background-color: black;
+    color: white;
 }
