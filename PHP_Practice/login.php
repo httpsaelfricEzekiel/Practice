@@ -119,6 +119,9 @@
                 <div class="forgot-box">
                     <span><a href="">Forgot your password?</a></span>
                 </div>
+                <div class="ex-links">
+                    <a href="register.php">Register</a>
+                </div>
                 <div class="submit-box">
                     <input class="login-button" type="submit" name="loginAccount" onsubmit="subForm()" value="Login">
                 </div>
