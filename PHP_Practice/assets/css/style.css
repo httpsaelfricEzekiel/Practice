@@ -151,3 +151,9 @@
     background-color: black;
     color: white;
 }
+.eye-show-pass {
+    position: absolute;
+    top: 1.76rem;
+    left: 16.5rem;
+    cursor: pointer;
+}
