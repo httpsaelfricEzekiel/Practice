@@ -31,12 +31,12 @@ const showPassword = () => {
         element.addEventListener('click', function(e){
             e.preventDefault()
 
-            if(document.querySelectorAll('.toggle-password')[i].getAttribute("type") == "password"){
-                document.querySelectorAll('.toggle-password')[i].setAttribute("type", "text")
+            if(document.querySelectorAll('#pass')[i].getAttribute("type") == "password"){
+                document.querySelectorAll('#pass')[i].setAttribute("type", "text")
                 element.classList.remove('fa-eye');
                 element.classList.add('fa-eye-slash');
             } else {
-                document.querySelectorAll('.toggle-password')[i].setAttribute("type", "password")
+                document.querySelectorAll('#pass')[i].setAttribute("type", "password")
                 element.classList.remove('fa-eye-slash');
                 element.classList.add("fa-eye")
             }

@@ -23,8 +23,7 @@
     <title><?php echo $firstName . " " . $lastName; ?></title>
 </head>
 <body>
-    <h1>hi <?php echo $firstName . " " . $lastName; ?></h1>
-    <?php echo $password; ?>
+    <h1>IMissYou</h1>
     <a href="logout.php">Logout</a>
 </body>
 </html>
