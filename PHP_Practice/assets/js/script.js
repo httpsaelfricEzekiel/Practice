@@ -1,9 +1,6 @@
 const subForm = () => {
     const loginForm = document.getElementById('loginForm');
     loginForm.addEventListener('submit', (e) => {
-        if(!validForm){
-            e.preventDefault();
-        }
 
         let validForm = true;
 
@@ -21,6 +18,10 @@ const subForm = () => {
         if(password.value.trim() === ''){
             password.classList.add('error');
             validForm = false;
+        }
+
+        if(!validForm){
+            e.preventDefault();
         }
     });
 }
