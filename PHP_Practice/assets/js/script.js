@@ -1,9 +1,10 @@
 const subForm = () => {
     const loginForm = document.getElementById('loginForm');
+
     loginForm.addEventListener('submit', (e) => {
 
         let validForm = true;
-
+        
         const email = document.getElementById('email');
         const password = document.getElementById('pass');
 

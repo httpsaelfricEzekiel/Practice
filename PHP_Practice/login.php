@@ -53,13 +53,44 @@
                                 });
 
                             }
-
                             submitForm();
                         </script>
                     <?php
                 }
             } else {
-                $emailErr = "Email required!";
+                ?>
+                    <script>
+                        const form = () => {
+                            document.addEventListener('DOMContentLoaded', () => {
+                                const loginForm = document.getElementById('loginForm');
+                                const errorMessages = document.getElementById('emailLabel');
+                                const email = document.getElementById('email');
+
+                                loginForm.addEventListener('submit', (e) => {
+                                    let isvalid = true;
+
+                                    errorMessages.innerHTML = '';
+
+                                    if(email.value.trim() === ''){
+                                        errorMessages.innerHTML += "Email required!";
+                                        isValid = false;
+                                    }
+
+                                    if(!isValid){
+                                        e.preventDefault();
+                                    }
+                                });
+
+                                email.addEventListener('input', () => {
+                                    if(email.value.trim() !== ''){
+                                        errorMessages.innerHTML = '';
+                                    }
+                                });
+                            });
+                        }
+                        form();
+                    </script>
+                <?php
             }
             
             if(!empty($password) && ($password == $c_password)){
