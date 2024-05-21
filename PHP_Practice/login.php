@@ -28,7 +28,35 @@
                         }
                     }
                 } else {
-                    $emailErr = "Incorrect email format!";
+                    ?>
+                        <script>
+                            const submitForm = () => {
+                                document.addEventListener('DOMContentLoaded', () => {
+                                    const loginForm = document.getElementById('loginForm');
+                                    const errorMessages = document.getElementById('emailLabel');
+
+                                    loginForm.addEventListener('submit', (e) => {
+                                        errorMessages.innerHTML = '';
+
+                                        const email = document.getElementById('email').value.trim();
+
+                                        let isvalid = true;
+
+                                        if(email === ''){
+                                            errorMessages.innerHTML += "Incorrect Email!";
+                                        }
+
+                                        if(!isValid){
+                                            e.preventDefault();
+                                        }
+                                    });
+                                });
+
+                            }
+
+                            submitForm();
+                        </script>
+                    <?php
                 }
             } else {
                 $emailErr = "Email required!";
@@ -110,12 +138,12 @@
             </div>
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" id="loginForm">
                 <div class="email-input">
-                    <label for="email">Email</label><br>
-                    <input type="email" name="email" id="email"> <span class="error">* <?php echo $emailErr; ?></span><br>
+                    <label for="email" id="emailLabel">Email</label><br>
+                    <input type="email" name="email" id="email"><br>
                 </div>
                 <div class="password-input">
                     <label for="pass">Password</label><br>
-                    <input type="password" name="pass" id="pass" class="toggle-password"><i class="fa fa-eye eye-show-pass" aria-hidden="true"></i> <span class="error">*  <?php echo $passErr ?></span><br>
+                    <input type="password" name="pass" id="pass" class="toggle-password"><i class="fa fa-eye eye-show-pass" aria-hidden="true"></i><br>
                 </div>
                 <div class="forgot-box">
                     <span><a href="">Forgot your password?</a></span>

@@ -41,7 +41,7 @@ const showPassword = () => {
                 element.classList.remove('fa-eye-slash');
                 element.classList.add("fa-eye")
             }
-        })
-    })
+        });
+    });
 }
 showPassword();
