@@ -44,6 +44,7 @@
 
                                         if(email === ''){
                                             errorMessages.innerHTML += "Incorrect Email!";
+                                            isValid = false;
                                         }
 
                                         if(!isValid){

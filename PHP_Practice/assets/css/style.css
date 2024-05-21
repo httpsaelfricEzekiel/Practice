@@ -66,6 +66,7 @@
 }
 .password-input {
     position: absolute;
+    bottom: 7.6rem;
     left: 8.5rem;
     display: flex;
     flex-direction: column;
