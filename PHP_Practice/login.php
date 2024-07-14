@@ -35,8 +35,9 @@
                                     const loginForm = document.getElementById('loginForm');
                                     const errorMessages = document.getElementById('email-label');
                                     const email = document.getElementById('email').value.trim();
+                                    const login = document.querySelector("#login-box");
 
-                                    document.addEventListener("submit", loginBox);
+                                    login.addEventListener("submit", loginBox);
 
                                     const loginBox = e => {
                                         errorMessages.innerHTML = '';
@@ -52,9 +53,8 @@
                                             e.preventDefault();
                                         }
 
-                                        document.removeEventListener("submit", loginBox);
+                                        login.removeEventListener("submit", loginBox);
                                     };
-
                                     loginBox();
                                 }
                                 submitForm();
