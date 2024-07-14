@@ -30,30 +30,35 @@
                 } else {
                     ?>
                         <script>
-                            const submitForm = () => {
-                                document.addEventListener('DOMContentLoaded', () => {
+                            window.addEventListener("DOMContentLoaded", event => {
+                                const submitForm = () => {
                                     const loginForm = document.getElementById('loginForm');
-                                    const errorMessages = document.getElementById('emailLabel');
+                                    const errorMessages = document.getElementById('email-label');
+                                    const email = document.getElementById('email').value.trim();
 
-                                    loginForm.addEventListener('submit', (e) => {
+                                    document.addEventListener("submit", loginBox);
+
+                                    const loginBox = e => {
                                         errorMessages.innerHTML = '';
 
-                                        const email = document.getElementById('email').value.trim();
+                                        let isValid = true;
 
-                                        let isvalid = true;
-
-                                        if(email === ''){
+                                        if(email === ' '){
                                             errorMessages.innerHTML += "Incorrect Email!";
+                                            isValid = false;
                                         }
 
                                         if(!isValid){
                                             e.preventDefault();
                                         }
-                                    });
-                                });
 
-                            }
-                            submitForm();
+                                        document.removeEventListener("submit", loginBox);
+                                    };
+
+                                    loginBox();
+                                }
+                                submitForm();
+                            });
                         </script>
                     <?php
                 }
@@ -73,7 +78,7 @@
 
                                     if(email.value.trim() === ''){
                                         errorMessages.innerHTML += "Email required!";
-                                        isValid = false;
+                                        
                                     }
 
                                     if(!isValid){
@@ -169,7 +174,7 @@
             </div>
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" id="loginForm">
                 <div class="email-input">
-                    <label for="email" id="emailLabel">Email</label><br>
+                    <label for="email" id="email-label">Email</label><br>
                     <input type="email" name="email" id="email"><br>
                 </div>
                 <div class="password-input">
