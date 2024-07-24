@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const uniqueNumber = (unique_num) => {
+            let unique_num_result = 0;
+            let filter_num = unique_num.filter((el, i) => el + 1 == i);
+
+            for (let i = 0; i < filter_num.length; i++) {
+                unique_num_result = unique_num.lastIndexOf(filter_num[i]);
+            }
+            console.log('The unique element is ${unique_num_result}');
+        }
+        let unique_number = [1, 2, 3, 4, 5, 4, 3, 2, 1];
+        uniqueNumber(unique_number);
+    </script>
+</body>
+</html>
