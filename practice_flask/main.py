@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, url_for
 app = Flask(__name__)
 
-@app.route("/", methods=["POST", "GET"]) #tells the URL where should go
+@app.route("/", methods=["POST", "GET"]) #tells the rouie where URL should go
 def index():
     if request.method == "POST":
         name = request.form['username']
