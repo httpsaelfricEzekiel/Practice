@@ -4,9 +4,9 @@
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         $login_user = $_POST['loginAccount'];
-        $email = test_input($_POST['email']);
-        $password = test_input($_POST['pass']);
-        $c_password = test_input($_POST['pass']);
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $password = mysqli_real_escape_string($conn, $_POST['pass']);
+        $c_password = mysqli_real_escape_string($conn, $_POST['pass']);
 
         $emailErr = $passErr = $c_passErr = " ";
 
