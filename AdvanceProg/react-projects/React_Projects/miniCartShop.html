@@ -19,15 +19,16 @@
         const items = [
             { name: "Pineapple", price: 25 },
             { name: "Kiwi", price: 50 },
-            { name: "Apple", price: 40 }
+            { name: "Apple", price: 40 },
+            {name: "Orange", price: 50}
         ]
 
         function MiniCartShop() {
             const [username, setUsername] = React.useState("");
             const [passwords, setPassword] = React.useState("");
-            const [loggedIn, setLoggedIn] = React.useState(true);
-            const [totalPrice, setTotalPrice] = React.useState(0)
-            const [cartItems, setCartItems] = React.useState([])
+            let [loggedIn, setLoggedIn] = React.useState(true);
+            const [totalPrice, setTotalPrice] = React.useState(0);
+            const [cartItems, setCartItems] = React.useState([]);
 
             function handleLogin(e) {
                 e.preventDefault();
@@ -68,11 +69,12 @@
                         </form>
                     ) : (
                         <div>
+                            <h1>Hello {users[0]}</h1>
                             <h2>Available Items</h2>
                             <ul>
                                 {items.map((item, index) => (
                                     <li key={index}>
-                                        {item.name} = php{item.price}{""}
+                                        {item.name} = PHP {item.price} {""}
                                         <button onClick={() => handleAddToCart(item)}>Add To Cart</button>
                                     </li>
                                 ))}
