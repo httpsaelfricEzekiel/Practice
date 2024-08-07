@@ -26,7 +26,7 @@
         function MiniCartShop() {
             const [username, setUsername] = React.useState("");
             const [passwords, setPassword] = React.useState("");
-            let [loggedIn, setLoggedIn] = React.useState(true);
+            const [loggedIn, setLoggedIn] = React.useState(true);
             const [totalPrice, setTotalPrice] = React.useState(0);
             const [cartItems, setCartItems] = React.useState([]);
 
@@ -54,42 +54,44 @@
 
             return (
                 <div>
-                    {!loggedIn ? (
-                        <form onSubmit={handleLogin}>
-                            <label>Username:
-                                <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-                            </label>
-                            <br />
-                            <label>
-                                Password:
-                                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                            </label>
-                            <br />
-                            <button type="submit">Log In</button>
-                        </form>
-                    ) : (
-                        <div>
-                            <h1>Hello {users[0]}</h1>
-                            <h2>Available Items</h2>
-                            <ul>
-                                {items.map((item, index) => (
-                                    <li key={index}>
-                                        {item.name} = PHP {item.price} {""}
-                                        <button onClick={() => handleAddToCart(item)}>Add To Cart</button>
-                                    </li>
-                                ))}
-                            </ul>
-                            <h2>Cart</h2>
-                            <ul>
-                                {cartItems.map((item, index) => (
-                                    <li key={index}>
-                                        {item.name} - Php{item.price}
-                                    </li>
-                                ))}
-                            </ul>
-                            <p>Total Price: Php{totalPrice}</p>
-                        </div>
-                    )}
+                    {!loggedIn ? 
+                        (
+                            <form onSubmit={handleLogin}>
+                                <label>Username:
+                                    <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+                                </label>
+                                <br />
+                                <label>
+                                    Password:
+                                    <input type="password" value={password[1]} onChange={(e) => setPassword(e.target.value)} />
+                                </label>
+                                <br />
+                                <button type="submit">Log In</button>
+                            </form>
+                        ) : (
+                            <div>
+                                <h1>Hello {users[0]}</h1>
+                                <h2>Available Items</h2>
+                                <ul>
+                                    {items.map((item, index) => (
+                                        <li key={index}>
+                                            {item.name} = PHP {item.price} {""}
+                                            <button onClick={() => handleAddToCart(item)}>Add To Cart</button>
+                                        </li>
+                                    ))}
+                                </ul>
+                                <h2>Cart</h2>
+                                <ul>
+                                    {cartItems.map((item, index) => (
+                                        <li key={index}>
+                                            {item.name} - Php{item.price}
+                                        </li>
+                                    ))}
+                                </ul>
+                                <p>Total Price: Php{totalPrice}</p>
+                            </div>
+                        )
+                    }
                 </div>
             );
         }
