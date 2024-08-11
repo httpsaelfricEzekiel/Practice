@@ -1,7 +1,6 @@
-
 class Notes extends React.Component {
     constructor(){
-        super()
+        super();
         this.state = {
             notes: [],
             newNote: ""
@@ -18,12 +17,10 @@ class Notes extends React.Component {
     }
 
     handleAddNote(){
-        if(this.state.newNote.trim()){
-            this.setState(noteState => ({
-                notes: [...noteState.notes, noteState.newNote],
-                newNote: ""
-            }));
-        }
+        this.setState((note_state) => ({
+            notes: [...note_state.notes, note_state.newNote],
+            newNote: ''
+        }));
     }
     render(){
         return (
