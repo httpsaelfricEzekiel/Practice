@@ -1,56 +1,44 @@
-class Notes extends React.Component {
-    constructor(){
-        super();
-        this.state = {
-            notes: [],
-            newNote: ""
-        };
+function Notes() {
 
-        this.handleInputChange = this.handleInputChange;
-        this.handleAddNote = this.handleAddNote;
-        this.handleClearNotes = this.handleClearNotes;
-        this.handleShowAllNotes = this.handleShowAllNotes;
+    const [notes, setNotes] = React.useState([]);
+    function handleInputChange(e) {
+        setNotes((e) => e.target.value);
     }
 
-    handleInputChange = (e) => {
-        this.setState({newNote: e.target.value});
-    }
-
-    handleAddNote = () => {
-        if(this.state.newNote.trim()){
-            this.setState((note_state) => ({
+    const handleAddNote = () => {
+        if(notes.trim()){
+            setNotes((note_state) => ({
                 notes: [...note_state.notes, note_state.newNote],
                 newNote: ""
             }));
         }
     }
-    handleClearNotes = () => {
-        this.setState({notes: []});
+
+    const handleClearNotes = () => {
+        setNotes([]);
     }
 
-    handleShowAllNotes = () => {
-        console.log(this.state.notes);
+    const handleShowAllNotes = () => {
+        alert(`${notes}`);
     }
 
-    render(){
-        return (
-            <div>
-                <h1>Stick Notes</h1>
-                <input type="text" onChange={this.handleInputChange} value={this.state.newNote}/>
-                <button onClick={this.handleAddNote}>Add Notes</button>
-                <button onClick={this.handleClearNotes}>Clear Notes</button>
-                <button onClick={this.handleShowAllNotes}>Show all Notes</button>
-                <ul>
-                    {this.state.notes.map((note, index) => (
-                        <li key={index}>
-                            {note}
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        )
+    return (
+        <div>
+            <h1>Stick Notes</h1>
+            <input type="text" onChange={handleInputChange} value={notes}/>
+            <button onClick={handleAddNote}>Add Notes</button>
+            <button onClick={handleClearNotes}>Clear Notes</button>
+            <button onClick={handleShowAllNotes}>Show all Notes</button>
+            <ul>
+                {notes.map((note, index) => (
+                    <li key={index}>
+                        {note}
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )
 
-    }
 }
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<Notes/>);
