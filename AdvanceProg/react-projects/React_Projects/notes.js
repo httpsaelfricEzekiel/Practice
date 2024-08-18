@@ -1,17 +1,14 @@
 function Notes() {
-
     const [notes, setNotes] = React.useState([]);
-    function handleInputChange(e) {
-        setNotes((e) => e.target.value);
-    }
+    
+    const currDate = new Date();
+    const date = `${currDate.getMonth() + 1}/${currDate.getDate()}/${currDate.getFullYear()} ${currDate.getMinutes() - 1}`;
 
-    const handleAddNote = () => {
-        if(notes.trim()){
-            setNotes((note_state) => ({
-                notes: [...note_state.notes, note_state.newNote],
-                newNote: ""
-            }));
-        }
+    function handleInputChange(e){
+        setNotes([e.target.value]);
+    }
+    const handleAddNote = () => {   
+        setNotes([...notes, notes]);
     }
 
     const handleClearNotes = () => {
@@ -19,7 +16,7 @@ function Notes() {
     }
 
     const handleShowAllNotes = () => {
-        alert(`${notes}`);
+        alert(`\n${notes}\n${date}`);
     }
 
     return (
@@ -29,13 +26,13 @@ function Notes() {
             <button onClick={handleAddNote}>Add Notes</button>
             <button onClick={handleClearNotes}>Clear Notes</button>
             <button onClick={handleShowAllNotes}>Show all Notes</button>
-            <ul>
-                {notes.map((note, index) => (
-                    <li key={index}>
-                        {note}
-                    </li>
-                ))}
-            </ul>
+            {notes.map((note, index) => (
+                <p key={index}>
+                    {`${note}`}
+                    <br/>
+                    {`${date}`}
+                </p>
+            ))}
         </div>
     )
 
