@@ -1,6 +1,7 @@
+import React, {useState} from 'react';
 function Notes() {
-    const [notes, setNotes] = React.useState([]);
-    const [inputNotes, setInputNotes] = React.useState("");
+    const [notes, setNotes] = useState([]);
+    const [inputNotes, setInputNotes] = useState("");
     
     const currDate = new Date();
     const date = `${currDate.getMonth() + 1}/${currDate.getDate()}/${currDate.getFullYear()}, ${currDate.toLocaleTimeString()}`;
@@ -48,7 +49,7 @@ function Notes() {
             {notes.map((note, index) => (
                 <p key={index}>
                     {`${note}`}
-                    <br/>
+                    <br/>   
                     {`${date}`}
                 </p>
             ))}
@@ -56,5 +57,4 @@ function Notes() {
     )
 
 }
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Notes/>);
+export default Notes;
