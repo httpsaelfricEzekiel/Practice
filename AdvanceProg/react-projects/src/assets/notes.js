@@ -18,7 +18,7 @@ function Notes() {
     }
 
     const handleAddNote = (addedNote) => {  
-        if(inputNotes.trim() != ""){
+        if(inputNotes.trim() !== ""){
             setNotes([addedNote, ...notes]);
             setInputNotes("");
             alert("Notes Added!");
