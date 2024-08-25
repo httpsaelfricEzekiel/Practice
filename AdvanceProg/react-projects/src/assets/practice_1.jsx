@@ -1,5 +1,7 @@
+import React, {useState} from 'react';
+import {View, TouchableOpacity, Text, StyleSheet} from 'react-native';
 function App(){
-    const [count, setCount] = React.useState(0);
+    const [count, setCount] = useState(0);
 
     const handlePress = () => {
         setCount(count + 1);
