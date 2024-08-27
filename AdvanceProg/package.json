@@ -1,7 +1,6 @@
 {
   "dependencies": {
-    "react-scripts": "^5.0.1",
-    "readline-sync": "^1.4.10"
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
