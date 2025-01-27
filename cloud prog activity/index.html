@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.css">
+    <title>Random Quote</title>
+</head>
+
+<body>
+    <h1>Random Quote Generator</h1>
+    <p id="quote"></p>
+    <button id="btn" data-bs-toggle="modal" data-bs-target="#generateQuote" type="button">Generate Quote</button>
+
+    <div class="modal fade" id="generateQuote" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Generate Quote</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const quotes = () => {
+            const quotes = [
+                "We don't remember days, we remember moments - Cesare Pavese",
+                "The only way thing to fear is fear itself - Franklin Roosevelt",
+                "Sometimes taking a leap forwards means leaving a few thing behind - Ekko",
+                "The only true wisdom is in knowing you know nothing. - Socrates",
+                "Silence is better than unmeaning words. - Pythagoras",
+                "The only way to do great work is to love what you do - Steve Jobs",
+                "I take pictures so i can remember - Geloy Concepcion",
+                "I shall return - Gen. Douglas MacArthur",
+                "we shall fight on the beaches, we shall fight on the landing grounds, we shall fight in the fields and in the streets, we shall fight in the hills; we shall never surrender - Winston Churchill"]
+            return quotes;
+        }
+
+        const generateQuote = () => {
+            const btn = document.getElementById("btn");
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                const quote = quotes();
+                const random = Math.floor(Math.random() * quote.length);
+                document.getElementById("quote").innerHTML = quote[random];
+            })
+        }
+
+        const displayReminder = () => {
+            const reminder = "Click the button to Generate a random quote";
+            document.getElementById("quote").innerHTML = reminder;
+        }
+
+        const modal = () => {
+            const modal = document.getElementById("generateQuote");
+            const btn = document.getElementById("btn");
+            const span = document.getElementsByClassName("btn-close")[0];
+            const displayQuote = document.getElementsByClassName("modal-body")[0];
+
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                modal.style.display = "block";
+
+                const popup = document.getElementsByClassName("modal-body")[0];
+
+                if (popup.innerHTML === "") {
+                    displayQuote.innerHTML = "No quote generated";
+                } else {
+                    displayQuote.innerHTML = document.getElementById("quote").innerHTML;
+                    console.log(displayQuote.innerHTML);
+                }
+            });
+
+            span.addEventListener("click", (e) => {
+                e.preventDefault();
+                modal.style.display = "none";
+            });
+
+            window.addEventListener("click", (e) => {
+                if (e.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        }
+
+        setInterval(displayReminder(), 5000);
+        setInterval(generateQuote(), 3000);
+        setTimeout(modal(), 3000);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
