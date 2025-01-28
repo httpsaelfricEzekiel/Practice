@@ -17,7 +17,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Generate Quote</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Generated Quote</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -37,7 +37,12 @@
                 "The only way to do great work is to love what you do - Steve Jobs",
                 "I take pictures so i can remember - Geloy Concepcion",
                 "I shall return - Gen. Douglas MacArthur",
-                "we shall fight on the beaches, we shall fight on the landing grounds, we shall fight in the fields and in the streets, we shall fight in the hills; we shall never surrender - Winston Churchill"]
+                "we shall fight on the beaches, we shall fight on the landing grounds, we shall fight in the fields and in the streets, we shall fight in the hills; we shall never surrender - Winston Churchill",
+                "Imagination is more important than knowledge - Albert Einstein",
+                "Always be yourself, express yourself, have faith in yourself, do not go out and look for a successful personality and duplicate it. - Bruce Lee",
+                "When people see your personality come out, they feel so good, like they actually know who you are. - Usain Bolt",
+                "No matter what happens in life, be good to people. Being good to people is a wonderful legacy to leave behind. - Taylor Swift",
+            ]
             return quotes;
         }
 
@@ -52,7 +57,7 @@
         }
 
         const displayReminder = () => {
-            const reminder = "Click the button to Generate a random quote";
+            const reminder = "Click the button to generate a random quote";
             document.getElementById("quote").innerHTML = reminder;
         }
 
